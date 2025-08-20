@@ -42,3 +42,19 @@ h4 {
     backdrop-filter: blur(11.3px);
     -webkit-backdrop-filter: blur(11.3px);
 }
+
+
+.letter {
+    background-color: white;
+    height: 50px;
+    width: 50px; 
+    border-radius: 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+}
+
+.letter p {
+    margin-bottom: 0;
+}

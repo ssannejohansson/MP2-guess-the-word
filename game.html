@@ -28,27 +28,39 @@
 
     <!-- Game container -->
      <div class="container d-flex flex-column justify-content-center align-items-center" id="game-container">
-        <h1 class="text-center mb-2 display-3">Hello,</h1>
-        <h4 class="text-center">(name from javascript)</h4>
+        <h4 class="text-center mb-2">Game content</h4>
 
-        <form><div>
-        <select class="form-select mt-2" aria-label="Select difficulty">
-  <option selected>Choose your difficulty</option>
-  <option value="1">Easy</option>
-  <option value="2">Medium</option>
-  <option value="3">Hard</option>
-</select></div></form>
+        <p>Hint: <br>
+            this is just a placeholder text for a word-hint </p>
 
-    <div class="text-center mt-4">
-        <p>Instructions</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>
-        <p>Are you ready?</p>
+        <!-- Just for design purpose, will be removed when using javascript later -->
+
+        <div id="letter-container" class="d-flex gap-2 mb-5">
+        <div class="letter">
+            <p>A</p>
+        </div>
+        <div class="letter">
+            <p>A</p>
+        </div>
+        <div class="letter">
+            <p>A</p>
+        </div>
+        <div class="letter">
+            <p>A</p>
+        </div>
+        <div class="letter">
+            <p>A</p>
+        </div>
     </div>
 
-          <a href="game.html" class="btn btn-primary">Ready!</a>
-        
+    <p>Wrong letters: <br>
+        this is just a placeholder for wrong letters</p>
 
-</div>
+    <p>Remaining guesses: <br>
+        this is just a placeholder for remaining letters</p>
+       
+
+     </div>
 
     <!-- Bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
