@@ -2,6 +2,7 @@
 :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Limelight", sans-serif;
+    --heading-color: #36314e;
 }
 
 /* Global styles */
@@ -20,6 +21,7 @@ h1,
 h2 {
     font-family: var(--secondary-font);
     text-transform: uppercase;
+    color: var(--heading-color);
 }
 
 
@@ -27,8 +29,8 @@ h2 {
 /* Game container */
 
 #game-container {
-    width: 70%;
-    height: 80%;
+    width: 80%;
+    height: 90%;
 
     /* From https://css.glass */
     background: rgba(255, 255, 255, 0.38);
