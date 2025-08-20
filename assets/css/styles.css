@@ -14,3 +14,18 @@ body {
     font-family: var(--primary-font);
     font-weight: 500;
 }
+
+h1, h2 {
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+}
+
+
+
+/* Game container */
+
+#game-container {
+    width: 70%;
+    height: 80%;
+    background-color: white;
+}
