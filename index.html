@@ -28,8 +28,15 @@
 
     <!-- Game container -->
      <div class="container d-flex flex-column justify-content-center align-items-center" id="game-container">
-        <h1> Title</h1>
-        <p>placeholder text</p>
+        <h4 class="text-center mb-2">Welcome to</h4>
+        <h1 class="text-center display-3">Guess the word!</h1>
+ 
+        <p class="text-center m-2">Type your name before we get started</p>
+        <form method="GET" class="d-flex flex-column justify-content-center align-items-center">
+        <label for="name" class="d-none">Name</label>
+        <input type="text" id="name" required> 
+          <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
      </div>
 
     <!-- Bootstrap script -->

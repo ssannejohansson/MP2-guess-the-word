@@ -2,7 +2,7 @@
 :root {
     --primary-font: "Inter", sans-serif;
     --secondary-font: "Limelight", sans-serif;
-    --heading-color: #36314e;
+    --primary-color: #36314e;
 }
 
 /* Global styles */
@@ -15,13 +15,16 @@ body {
     background-repeat: no-repeat;
     font-family: var(--primary-font);
     font-weight: 500;
+    color: var(--primary-color);
 }
 
-h1,
-h2 {
+h1 {
     font-family: var(--secondary-font);
     text-transform: uppercase;
-    color: var(--heading-color);
+}
+
+h4 {
+    font-family: var(--secondary-font);
 }
 
 
