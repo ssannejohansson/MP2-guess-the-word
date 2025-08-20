@@ -1,13 +1,14 @@
 /* CSS Variables */
 :root {
-    --primary-font: "Inter", sans-serif; 
-    --secondary-font: "Limelight", sans-serif; 
+    --primary-font: "Inter", sans-serif;
+    --secondary-font: "Limelight", sans-serif;
 }
 
-/* Global styles */ 
+/* Global styles */
 body {
     height: 100vh;
-    background-color: #d5d6e8; /* Fallback for background-image */ 
+    background-color: #d5d6e8;
+    /* Fallback for background-image */
     background-image: url(../images/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,7 +16,8 @@ body {
     font-weight: 500;
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: var(--secondary-font);
     text-transform: uppercase;
 }
@@ -27,5 +29,11 @@ h1, h2 {
 #game-container {
     width: 70%;
     height: 80%;
-    background-color: white;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.38);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.3px);
+    -webkit-backdrop-filter: blur(11.3px);
 }
