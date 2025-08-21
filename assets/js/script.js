@@ -3,9 +3,7 @@ const gameContainer = document.getElementById("game-container");
 const backBtn = document.getElementById("back-btn");
 
 // Heading elements 
-const headingContainer = document.getElementById("heading-container");
-const heading = document.getElementById("heading");
-const headingSmall = document.getElementById("heading-small");
+
 // Input elements 
 const inputContainer = document.getElementById("input-container");
 const inputForm = document.getElementById("input-form");
@@ -19,8 +17,17 @@ const infoText = document.getElementById("info-text");
 const startGame = document.getElementById("start-btn");
 
 
-// Store username from input field
-function userName() {
-    const input = document.getElementById("userInput").value 
-    alert(input)
+
+
+  document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
+
+function diffPage(e) {
+    // Store username from input field 
+
+const input = document.getElementById("userInput").value;
+let heading = "Hello, ";
+let headingSmall = `${input}`; 
+
+    document.getElementById("heading").innerText = headingSmall; 
+    document.getElementById("heading-small").innerText = heading; 
 }
