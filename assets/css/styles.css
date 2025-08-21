@@ -27,6 +27,10 @@ h2 {
     font-family: var(--secondary-font);
 }
 
+p {
+    text-align: center;
+}
+
 
 
 /* Game container */
