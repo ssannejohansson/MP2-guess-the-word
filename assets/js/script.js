@@ -1,3 +1,8 @@
+$(document).ready(function() {
+    
+});
+
+
 // DOM 
 const gameContainer = document.getElementById("game-container");
 const backBtn = document.getElementById("back-btn");
@@ -19,15 +24,16 @@ const startGame = document.getElementById("start-btn");
 
 
 
-  document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
+document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
 
 function diffPage(e) {
-    // Store username from input field 
 
-const input = document.getElementById("userInput").value;
-let heading = "Hello, ";
-let headingSmall = `${input}`; 
+const input = document.getElementById("userInput").value; // Store input in a variable
+$("#heading-small").remove();
+$("#heading").text(`Hello ${input}!`).css("text-transform", "capitalize");
+$("#userInput").css("text-transform", "capitalize");
 
-    document.getElementById("heading").innerText = headingSmall; 
-    document.getElementById("heading-small").innerText = heading; 
+
+
+
 }
