@@ -17,7 +17,7 @@ let instructions = '<div class="d-flex flex-column justify-content-center align-
     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
     '</div>';
 
-let startBtn = '<a href="game.html" type="button" class="btn btn-primary mt-2" id="start-btn">Start Game</a>';
+let startBtn = '<button type="button" class="btn btn-primary mt-2" id="start-btn">Start Game</button>';
 
 
 
@@ -30,6 +30,24 @@ function diffPage(e) {
     $("#userInput").css("text-transform", "capitalize");
     $("#input-container").children().remove();
     $("#input-container").append(selectDifficulty).append(instructions).append(startBtn);
+    $("#start-btn").on("click", startGame);
+}
+
+let gameInterface = '<h1 class="text-center mb-2">Guess the Word!</h1>' +
+                    '<p id="hint">Hint: <br>' +
+                    '<span>Hint</span></p>' + 
+                    '<div id="letter-container" class="container d-flex flex-wrap gap-2 mb-5"></div>' +
+                    '<div class="game-info">' +
+                    '<p id="wrong-letters">Wrong letters: <br>' +
+                    '<span>a, b, c</span></p>' +
+                    '<p id="rem-guess">Remaining guesses: <br>' +
+                    '<span>10</span></p>' +
+                    '</div>';
+
+
+function startGame() {
+    $("#game-container").children().remove();
+    $("#game-container").append(gameInterface);
 }
 
 // GAME FUNCTIONALITY
@@ -56,11 +74,22 @@ const wordList = [{
     },
 ];
 
+// Game functionality
+
+const inputs = document.querySelector("#letter-container");
+
 function randomWord() {
     // Gets a random object from wordList array
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)];
     let word = randomObject.word; // Fetches only a random word and not the whole object (with hint)
     console.log(word);
+
+    let html = "";
+    for (let i = 0; i < word.length; i++) {
+        html += `<input type="text" disabled>`;
+    }
+
+    inputs.innerHTML = html; 
 }
 
 randomWord();
