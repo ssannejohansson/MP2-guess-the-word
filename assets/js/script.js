@@ -32,8 +32,9 @@ let selectDifficulty = '<div class="d-flex flex-column justify-content-center al
 let instructions = '<div class="d-flex flex-column justify-content-center align-items-center">' + 
                     '<p>Instructions: </p>' + 
                     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
-                    '<a href="game.html" class="btn btn-primary mt-2" id="start-btn">Start game</a>' +
                     '</div>';
+
+let startBtn = '<a href="game.html" type="button" class="btn btn-primary mt-2" id="start-btn">Start Game</a>';
 
 
 
@@ -45,7 +46,7 @@ $("#heading-small").remove();
 $("#heading").text(`Hello ${input}!`).css("text-transform", "capitalize");
 $("#userInput").css("text-transform", "capitalize");
 $("#input-container").children().remove();
-$("#input-container").append(selectDifficulty).append(instructions); 
+$("#input-container").append(selectDifficulty).append(instructions).append(startBtn);
 }
 
 

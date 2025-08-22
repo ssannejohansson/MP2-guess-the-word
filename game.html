@@ -30,46 +30,39 @@
 <body class="d-flex flex-column justify-content-center align-items-center">
 
     <!-- Game container -->
-     <div class="container d-flex flex-column justify-content-center align-items-center" id="game-container">
+     <section class="container d-flex flex-column justify-content-center align-items-center" id="game-container">
         
     <nav class="navbar bg-body-tertiary">
 
           <a href="difficulty.html" class="btn"><i class="fa-solid fa-angle-left"></i></a>
-</nav>
+        </nav>
         
         <h4 class="text-center mb-2">Game content</h4>
 
-        <p>Hint: <br>
-            this is just a placeholder text for a word-hint </p>
+        <p id="hint">Hint: <br>
+            <span>Hint</span></p>
 
         <!-- Just for design purpose, will be removed when using javascript later -->
 
-        <div id="letter-container" class="d-flex gap-2 mb-5">
-        <div class="letter">
-            <p>A</p>
-        </div>
-        <div class="letter">
-            <p>A</p>
-        </div>
-        <div class="letter">
-            <p>A</p>
-        </div>
-        <div class="letter">
-            <p>A</p>
-        </div>
-        <div class="letter">
-            <p>A</p>
-        </div>
-    </div>
-
-    <p>Wrong letters: <br>
-        this is just a placeholder for wrong letters</p>
-
-    <p>Remaining guesses: <br>
-        this is just a placeholder for remaining letters</p>
+        <div id="letter-container" class="container d-flex flex-wrap gap-2 mb-5">
+            <input type="text" disabled>
+            <input type="text" disabled>
+            <input type="text" disabled>
+            <input type="text" disabled>
+            <input type="text" disabled>
        
+            </div>
 
-     </div>
+            <div class="game-info">
+
+    <p id="wrong-letters">Wrong letters: <br>
+        <span>a, b, c</span></p>
+
+    <p id="rem-guess">Remaining guesses: <br>
+        <span>10</span></p>
+       </div>
+
+    </section>
 
     <!-- Bootstrap script -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
