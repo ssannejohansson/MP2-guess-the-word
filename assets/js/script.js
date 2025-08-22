@@ -24,30 +24,34 @@ let startBtn = '<button type="button" class="btn btn-primary mt-2" id="start-btn
 // document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
 
 function diffPage(e) {
-    const input = document.getElementById("userInput").value; // Store input in a variable
+    const nameInput = document.getElementById("userInput").value; // Store input in a variable
     $("#heading-small").remove();
-    $("#heading").text(`Hello ${input}!`).css("text-transform", "capitalize");
+    $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize");
     $("#userInput").css("text-transform", "capitalize");
     $("#input-container").children().remove();
     $("#input-container").append(selectDifficulty).append(instructions).append(startBtn);
     $("#start-btn").on("click", startGame);
 }
 
-let gameInterface = '<h1 class="text-center mb-2">Guess the Word!</h1>' +
-                    '<p id="hint">Hint: <br>' +
-                    '<span>Hint</span></p>' + 
-                    '<div id="letter-container" class="container d-flex flex-wrap gap-2 mb-5"></div>' +
-                    '<div class="game-info">' +
-                    '<p id="wrong-letters">Wrong letters: <br>' +
-                    '<span>a, b, c</span></p>' +
-                    '<p id="rem-guess">Remaining guesses: <br>' +
-                    '<span>10</span></p>' +
-                    '</div>';
+let hints = '<p id="hint">Hint: <br>' +
+            '<span>Hint</span></p>';
 
+let gameInfo = '<div class="game-info">' +
+                '<p id="wrong-letters">Wrong letters: <br>' +
+                '<span>a, b, c</span></p>' +
+                '<p id="rem-guess">Remaining guesses: <br>' +
+                '<span>10</span></p>' +
+                '</div>';
+
+let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn">Reset Game</button>';
 
 function startGame() {
-    $("#game-container").children().remove();
-    $("#game-container").append(gameInterface);
+$("#heading").text("Guess the word!").css("text-transform", "uppercase");
+$("#input-container").children().remove();
+$("#heading-container").append(hints);
+$("#letter-container").removeClass("d-none");
+$("#game-container").append(gameInfo).append(resetBtn);
+$("#reset-btn").on("click", randomWord);
 }
 
 // GAME FUNCTIONALITY
@@ -77,6 +81,7 @@ const wordList = [{
 // Game functionality
 
 const inputs = document.querySelector("#letter-container");
+ 
 
 function randomWord() {
     // Gets a random object from wordList array
@@ -85,11 +90,15 @@ function randomWord() {
     console.log(word);
 
     let html = "";
+
+
     for (let i = 0; i < word.length; i++) {
-        html += `<input type="text" disabled>`;
+        html += `<input type="text" id="letter" disabled>`;
     }
 
+  
     inputs.innerHTML = html; 
 }
 
 randomWord();
+
