@@ -21,7 +21,7 @@ let startBtn = '<a href="game.html" type="button" class="btn btn-primary mt-2" i
 
 
 
-document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
+// document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
 
 function diffPage(e) {
     const input = document.getElementById("userInput").value; // Store input in a variable
@@ -54,4 +54,13 @@ const wordList = [{
         word: "home",
         hint: "where you live"
     },
-]
+];
+
+function randomWord() {
+    // Gets a random object from wordList array
+    let randomObject = wordList[Math.floor(Math.random() * wordList.length)];
+    let word = randomObject.word; // Fetches only a random word and not the whole object (with hint)
+    console.log(word);
+}
+
+randomWord();
