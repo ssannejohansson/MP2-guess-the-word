@@ -33,7 +33,6 @@ function diffPage(e) {
     $("#start-btn").on("click", startGame);
 }
 
-
 let gameInfo = '<div class="game-info">' +
                 '<p>Hint:</p>' +
                 '<p id="hint"></p>' +
@@ -49,6 +48,7 @@ function startGame() {
 $("#heading").text("Guess the word!").css("text-transform", "uppercase");
 $("#input-container").children().remove();
 $("#letter-container").removeClass("d-none");
+$("#typing-input").removeClass("d-none");
 $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#reset-btn").on("click", randomWord);
@@ -82,13 +82,16 @@ const wordList = [{
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
-    let word = randomObject.word; // Fetches a random word 
-    let hints = randomObject.hint; // Fetches a random hint 
+    let word; // Fetches a random word 
+    let hints; // Fetches a random hint 
+
+const typingInput = document.querySelector("#typing-input");
+
 
 function randomWord() {
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
-    let word = randomObject.word; // Fetches a random word 
-    let hints = randomObject.hint; // Fetches a random hint
+    word = randomObject.word; // Fetches a random word 
+    hints = randomObject.hint; // Fetches a random hint
     console.log(word);
 
     $("#hint").text(hints);
@@ -103,4 +106,35 @@ function randomWord() {
 }
 
 randomWord();
+
+
+
+function initGame(e) {
+    let key = e.target.value;
+    if(key.match(/^[A-Za-z]+$/)) {
+         console.log(key);   
+    if (word.includes(key)) { // If letter is found in the word
+        for (let i = 0; i < word.length; i++) {
+            // Showing matched letter in the input value
+            if (word[i] === key) {
+                inputs.querySelectorAll("input")[i].value = key;
+            }
+        }
+    } else {
+        console.log("letter not found");
+    }
+
+    }
+    typingInput.value = ""; // Empty input-field after typing a letter
+}
+
+$(typingInput).on("input", initGame);
+document.addEventListener("keydown", () => typingInput.focus());
+
+
+
+
+
+
+
 
