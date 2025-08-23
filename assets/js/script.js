@@ -33,14 +33,14 @@ function diffPage(e) {
     $("#start-btn").on("click", startGame);
 }
 
-let hints = '<p>Hint:' +
-            '<p id="hint"></p>';
 
 let gameInfo = '<div class="game-info">' +
+                '<p>Hint:</p>' +
+                '<p id="hint"></p>' +
                 '<p>Wrong letters:</p>' +
-                '<p id="wrong-letters>a, b, c</p>' +
-                '<p>Remaining guesses:' +
-                '<p id="rem-letters>10</p>' +
+                '<p id="wrong-letters">a, b, c</p>' +
+                '<p>Remaining guesses:</p>' +
+                '<p id="rem-letters">10</p>' +
                 '</div>';
 
 let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn">Reset Game</button>';
@@ -48,10 +48,9 @@ let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn
 function startGame() {
 $("#heading").text("Guess the word!").css("text-transform", "uppercase");
 $("#input-container").children().remove();
-$("#heading-container").append(hints);
-$("#hint").text(randomObject.hint);
 $("#letter-container").removeClass("d-none");
 $("#game-container").append(gameInfo).append(resetBtn);
+$("#hint").text(hints);
 $("#reset-btn").on("click", randomWord);
 }
 
@@ -82,22 +81,25 @@ const wordList = [{
 // Game functionality
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
-let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
+    let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
+    let word = randomObject.word; // Fetches a random word 
+    let hints = randomObject.hint; // Fetches a random hint 
 
 function randomWord() {
-    let word = randomObject.word; // Fetches only a random word and not the whole object (with hint)
+    let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
+    let word = randomObject.word; // Fetches a random word 
+    let hints = randomObject.hint; // Fetches a random hint
     console.log(word);
 
-    //let hint = document.querySelector("#hint span");
-    //hint.innerText = randomObject.hint;
-   
+    $("#hint").text(hints);
+
     let html = "";
     for (let i = 0; i < word.length; i++) {
         html += `<input type="text" id="letter" disabled>`;
     }
 
-  
     inputs.innerHTML = html; 
+
 }
 
 randomWord();
