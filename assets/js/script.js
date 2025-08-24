@@ -92,7 +92,7 @@ const inputs = document.querySelector("#letter-container"); // Container for let
 
 
 const typingInput = document.querySelector("#typing-input");
-const wrongLetter = document.querySelector("#wrong-letter");
+const wrongLetter = document.querySelector("#wrong-letters");
 const guessLeft = document.querySelector("#rem-guess");
 
 
@@ -102,11 +102,15 @@ function randomWord() {
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
     word = randomObject.word; // Fetches a random word 
     hints = randomObject.hint; // Fetches a random hint
-    maxGuess = 8;
+    maxGuess = 8; // Max amount of guesses
+    corrects = []; // Array of correct letters
+    incorrects = []; // Array of incorrect letters
     console.log(word);
 
     $("#hint").text(hints);
     $("#rem-guess").text(maxGuess);
+    $("#wrong-letters").text(incorrects);
+  
 
     let html = "";
     for (let i = 0; i < word.length; i++) {
@@ -144,13 +148,18 @@ function initGame(e) {
  }
     typingInput.value = ""; // Empty input-field after typing a letter
 
-    if (maxGuess < 1) { // If amount of guesses is less than 1
+setTimeout(() => {
+    if (corrects.length === word.length) { // If user found all letters
+        alert(`Congrats! You found the word ${word.toUpperCase()}`);
+        randomWord(); // The game starts over
+    } else if (maxGuess < 1) { // If amount of guesses is less than 1
         alert("Game over!");
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
                 inputs.querySelectorAll("input")[i].value = word[i];
             }
     }
+    });
 }
 
 $(typingInput).on("input", initGame);
