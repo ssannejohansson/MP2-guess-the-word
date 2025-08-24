@@ -144,7 +144,13 @@ function initGame(e) {
  }
     typingInput.value = ""; // Empty input-field after typing a letter
 
-    if (maxGuess === 0) {}
+    if (maxGuess < 1) { // If amount of guesses is less than 1
+        alert("Game over!");
+        for (let i = 0; i < word.length; i++) {
+            // Show all letters in the input
+                inputs.querySelectorAll("input")[i].value = word[i];
+            }
+    }
 }
 
 $(typingInput).on("input", initGame);
