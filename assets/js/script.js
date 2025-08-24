@@ -1,21 +1,24 @@
 // BEFORE GAME STARTS 
 
 // Selection dropdown variable 
-let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center">' +
-    '<p>Please select difficulty</p>' +
+let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center p-2">' +
+    '<p class="mb-0">Choose your difficulty</p>' +
     '<form class="mb-3">' +
-    '<select class="form-select mt-2" aria-label="Select difficulty">' +
+    '<select class="form-select shadow-none outline-none mt-2" aria-label="Select difficulty">' +
     '<option selected value="1">Easy</option>' +
     '<option value="2">Medium</option>' +
     '<option value="3">Hard</option>' +
     '</select>' +
     '</form>' +
+    '<p><strong>Easy:</strong> >5 letters, 8 guesses<br>' +
+    '<strong>Medium:</strong> >10 letters, 6 guesses<br>' +
+    '<strong>Hard:</strong> >15 letters, 4 guesses</p>'
     '</div>';
 
     // Instructions variable
-let instructions = '<div class="d-flex flex-column justify-content-center align-items-center">' +
-    '<h6 class="head-text">Instructions: </h6>' +
-    '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
+let instructions = '<div class="d-flex flex-column justify-content-center align-items-center p-2">' +
+    '<p>Click the button below to generate a random word. Use your keyboard to guess a letter.</p>' +
+    '<p>When your guess is correct the letter will automaticlly will be inserted to the word.</p>' +
     '<button type="button" class="btn custom-btn mt-2" id="start-btn">Start Game</button>' +
     '</div>';
 
@@ -27,7 +30,6 @@ let instructions = '<div class="d-flex flex-column justify-content-center align-
 
 function diffPage(e) {
     const nameInput = document.getElementById("userInput").value; // Store input in a variable
-    $("#game-container").addClass("d-flex").addClass("justify-content-center");
     $("#heading-small").remove();
     $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize");
     $("#userInput").css("text-transform", "capitalize");
