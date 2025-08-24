@@ -43,8 +43,11 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
  font-weight: 600;
 }
 
-
-
+input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
 
 
 /* Game container */
@@ -75,4 +78,14 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 
 .letter p {
     margin-bottom: 0;
+}
+
+#userInput {
+    height: 2.5rem;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.517);
+    border: none;
+    border-radius: 16px;
+    font-size: 24px;
+    text-transform: uppercase;
 }

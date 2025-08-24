@@ -31,7 +31,7 @@
      <section class="container d-flex flex-column justify-content-center align-items-center" id="game-container">
         <div id="heading-container">
             <h2 class="text-center mb-2" id="heading-small">Welcome to</h2>
-            <h1 class="text-center display-3" id="heading">Guess the word!</h1>
+            <h1 class="text-center display-3 mb-4" id="heading">Guess the word!</h1>
         </div>
 
         <div id="letter-container" class="d-none container d-flex flex-wrap gap-2 mb-5">
@@ -41,11 +41,11 @@
 
         <div id="input-container">
            
-        <p class="text-center m-2" id="input-info">Type your name before we get started</p>
+        <p class="text-center m-2 mb-3" id="input-info">Type your name before we get started</p>
         <form method="GET" class="d-flex flex-column justify-content-center align-items-center" id="input-form">
         <label for="user-input" class="d-none">Name</label>
-        <input type="text" id="userInput" required> 
-          <button onClick="diffPage()" type="button" class="btn custom-btn mt-2" id="continue-btn">Continue</button>
+        <input type="text" id="userInput" class="text-center" required> 
+          <button onClick="diffPage()" type="button" class="btn custom-btn mt-4" id="continue-btn">Continue</button>
     </form>
 </div>
 </section>
