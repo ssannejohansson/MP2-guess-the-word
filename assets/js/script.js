@@ -12,16 +12,17 @@ let selectDifficulty = '<div class="d-flex flex-column justify-content-center al
     '</form>' +
     '</div>';
 
+    // Instructions variable
 let instructions = '<div class="d-flex flex-column justify-content-center align-items-center">' +
     '<p>Instructions: </p>' +
     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
     '</div>';
 
+
+    // Start button variable
 let startBtn = '<button type="button" class="btn btn-primary mt-2" id="start-btn">Start Game</button>';
 
-
-
-// document.getElementById("continue-btn").addEventListener("click", e => diffPage(e));
+// Difficulty page
 
 function diffPage(e) {
     const nameInput = document.getElementById("userInput").value; // Store input in a variable
@@ -33,6 +34,7 @@ function diffPage(e) {
     $("#start-btn").on("click", startGame);
 }
 
+// Game info variable
 let gameInfo = '<div class="game-info">' +
                 '<p>Hint:</p>' +
                 '<p id="hint"></p>' +
@@ -42,8 +44,10 @@ let gameInfo = '<div class="game-info">' +
                 '<p id="rem-guess"></p>' +
                 '</div>';
 
+                // Reset button variable
 let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn">Reset Game</button>';
 
+// Start game page
 function startGame() {
 $("#heading").text("Guess the word!").css("text-transform", "uppercase");
 $("#input-container").children().remove();

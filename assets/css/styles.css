@@ -31,6 +31,20 @@ p {
     text-align: center;
 }
 
+.custom-btn {
+    height: 3rem;
+    width: 7rem;
+    background-color: #cae6ec;
+    border-radius: 25px; 
+box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
+-webkit-box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
+-moz-box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
+ color: #25373a;
+ font-weight: 600;
+}
+
+
+
 
 
 /* Game container */
