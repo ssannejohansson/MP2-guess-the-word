@@ -84,8 +84,12 @@ const inputs = document.querySelector("#letter-container"); // Container for let
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
     let word; // Fetches a random word 
     let hints; // Fetches a random hint 
+    let corrects = [];
+    let incorrects = []; 
+    
 
 const typingInput = document.querySelector("#typing-input");
+const wrongLetter = document.querySelector("#wrong-letter");
 
 
 function randomWord() {
@@ -111,20 +115,22 @@ randomWord();
 
 function initGame(e) {
     let key = e.target.value;
-    if(key.match(/^[A-Za-z]+$/)) {
+    if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
     if (word.includes(key)) { // If letter is found in the word
         for (let i = 0; i < word.length; i++) {
             // Showing matched letter in the input value
             if (word[i] === key) {
+                corrects.push(key)
                 inputs.querySelectorAll("input")[i].value = key;
             }
         }
     } else {
-        console.log("letter not found");
+        incorrects.push(` ${key}`);
     }
 
     }
+    $("#wrong-letters").text(incorrects)
     typingInput.value = ""; // Empty input-field after typing a letter
 }
 
