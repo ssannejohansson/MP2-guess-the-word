@@ -16,21 +16,23 @@ let selectDifficulty = '<div class="d-flex flex-column justify-content-center al
 let instructions = '<div class="d-flex flex-column justify-content-center align-items-center">' +
     '<h6 class="head-text">Instructions: </h6>' +
     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
+    '<button type="button" class="btn custom-btn mt-2" id="start-btn">Start Game</button>' +
     '</div>';
 
 
     // Start button variable
-let startBtn = '<button type="button" class="btn custom-btn mt-2" id="start-btn">Start Game</button>';
+
 
 // Difficulty page
 
 function diffPage(e) {
     const nameInput = document.getElementById("userInput").value; // Store input in a variable
+    $("#game-container").addClass("d-flex").addClass("justify-content-center");
     $("#heading-small").remove();
     $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize");
     $("#userInput").css("text-transform", "capitalize");
     $("#input-container").children().remove();
-    $("#input-container").append(selectDifficulty).append(instructions).append(startBtn);
+    $("#input-container").append(selectDifficulty).append(instructions);
     $("#start-btn").on("click", startGame);
 }
 
