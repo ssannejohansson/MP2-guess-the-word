@@ -3,13 +3,9 @@
 // Selection dropdown variable 
 let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center ps-2 pe-2">' +
     '<p class="mb-0">Choose your difficulty</p>' +
-    '<form class="mb-3">' +
-    '<select class="form-select shadow-none outline-none mt-2" aria-label="Select difficulty">' +
-    '<option selected value="1">Easy</option>' +
-    '<option value="2">Medium</option>' +
-    '<option value="3">Hard</option>' +
-    '</select>' +
-    '</form>' +
+    '<button id="easy" onclick="changeDiff(1)">Easy</button>' +
+    '<button id="2" id="medium" onclick="changeDiff(2)">Medium</button>' +
+    '<button value="3" id="hard" onclick="changeDiff(3)">Hard</button>' +
     '<p><strong>Easy:</strong> >5 letters, 8 guesses<br>' +
     '<strong>Medium:</strong> >10 letters, 6 guesses<br>' +
     '<strong>Hard:</strong> >15 letters, 4 guesses</p>'
@@ -39,6 +35,17 @@ function diffPage(e) {
     $("#start-btn").on("click", startGame);
 }
 
+
+function changeDiff (difficulty) {
+    if (difficulty === 1) {
+        wordList = easyWords.slice();
+    } else if (difficulty === 2) {
+        wordList = mediumWords.slice();
+    } else if (difficulty === 3) {
+        wordList = hardWords.slice();
+    }
+};
+
 // Game info variable
 let gameInfo = '<div class="d-flex flex-column p-2" id="game-info">' +
                 '<h6>Hint:</h6>' +
@@ -54,6 +61,7 @@ let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn"
 
 // Start game page
 function startGame() {
+    randomWord();
 $("#heading").text("Guess the word!").css("text-transform", "uppercase");
 $("#input-container").children().remove();
 $("#letter-container").removeClass("d-none");
@@ -66,27 +74,28 @@ $("#reset-btn").on("click", randomWord);
 
 // GAME FUNCTIONALITY
 
-const wordList = [{
-        word: "hello",
-        hint: "greeting"
-    },
-    {
-        word: "cat",
-        hint: "says meow"
-    },
-    {
-        word: "dog",
-        hint: "says woff"
-    },
-    {
-        word: "water",
-        hint: "something to drink"
-    },
-    {
-        word: "home",
-        hint: "where you live"
-    },
-];
+let wordList =  [];
+
+const easyWords = [{
+    word: "cat",
+    hint: "says meow"
+}, 
+{
+    word: "dog",
+    hint: "says woff"
+}];
+
+const mediumWords = [{
+    word: "water",
+    hint: "in our ocean"
+}];
+
+const hardWords = [{
+    word: "elephants",
+    hint: "lives in africa"
+}];
+
+
 
 // Game functionality
 
@@ -129,7 +138,7 @@ function randomWord() {
     inputs.innerHTML = html; 
 
 }
-
+changeDiff();
 randomWord();
 
 
