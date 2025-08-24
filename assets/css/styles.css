@@ -28,13 +28,13 @@ h2 {
 }
 
 h6 {
-
-    text-transform: uppercase;
+    font-family: var(--secondary-font);
+    font-size: 1.2rem; 
     margin-bottom: 0;
 }
 
 p {
-
+    font-size: 0.9rem; 
 }
 
 .custom-btn {
@@ -105,5 +105,12 @@ select:focus {
     text-transform: uppercase;
 }
 
+#game-info {
+    width: 100%;
+}
+
+#game-info p {
+    font-size: 1rem; 
+}
 
 

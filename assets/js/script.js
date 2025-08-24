@@ -1,7 +1,7 @@
 // BEFORE GAME STARTS 
 
 // Selection dropdown variable 
-let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center p-2">' +
+let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center ps-2 pe-2">' +
     '<p class="mb-0">Choose your difficulty</p>' +
     '<form class="mb-3">' +
     '<select class="form-select shadow-none outline-none mt-2" aria-label="Select difficulty">' +
@@ -31,6 +31,7 @@ let instructions = '<div class="d-flex flex-column justify-content-center align-
 function diffPage(e) {
     const nameInput = document.getElementById("userInput").value; // Store input in a variable
     $("#heading-small").remove();
+    $("#heading").removeClass("mb-4").addClass("mb-2");
     $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize");
     $("#userInput").css("text-transform", "capitalize");
     $("#input-container").children().remove();
@@ -39,7 +40,7 @@ function diffPage(e) {
 }
 
 // Game info variable
-let gameInfo = '<div class="game-info">' +
+let gameInfo = '<div class="d-flex flex-column p-2" id="game-info">' +
                 '<h6>Hint:</h6>' +
                 '<p id="hint"></p>' +
                 '<h6>Wrong letters:</h6>' +
