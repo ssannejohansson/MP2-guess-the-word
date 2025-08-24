@@ -14,13 +14,13 @@ let selectDifficulty = '<div class="d-flex flex-column justify-content-center al
 
     // Instructions variable
 let instructions = '<div class="d-flex flex-column justify-content-center align-items-center">' +
-    '<p>Instructions: </p>' +
+    '<h6 class="head-text">Instructions: </h6>' +
     '<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque maiores amet et eum, explicabo minima quam praesentium laudantium voluptate nemo exercitationem possimus veritatis, libero quibusdam illo? Dignissimos necessitatibus qui unde.</p>' +
     '</div>';
 
 
     // Start button variable
-let startBtn = '<button type="button" class="btn btn-primary mt-2" id="start-btn">Start Game</button>';
+let startBtn = '<button type="button" class="btn custom-btn mt-2" id="start-btn">Start Game</button>';
 
 // Difficulty page
 
@@ -36,16 +36,16 @@ function diffPage(e) {
 
 // Game info variable
 let gameInfo = '<div class="game-info">' +
-                '<p>Hint:</p>' +
+                '<h6>Hint:</h6>' +
                 '<p id="hint"></p>' +
-                '<p>Wrong letters:</p>' +
+                '<h6>Wrong letters:</h6>' +
                 '<p id="wrong-letters"></p>' +
-                '<p>Remaining guesses:</p>' +
+                '<h6>Remaining guesses:</h6>' +
                 '<p id="rem-guess"></p>' +
                 '</div>';
 
                 // Reset button variable
-let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn">Reset Game</button>';
+let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Reset Game</button>';
 
 // Start game page
 function startGame() {

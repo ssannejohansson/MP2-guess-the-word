@@ -27,13 +27,17 @@ h2 {
     font-family: var(--secondary-font);
 }
 
+h6 {
+    text-transform: uppercase;
+}
+
 p {
     text-align: center;
 }
 
 .custom-btn {
     height: 3rem;
-    width: 7rem;
+    width: fit-content;
     background-color: #cae6ec;
     border-radius: 25px; 
 box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
@@ -41,13 +45,17 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 -moz-box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
  color: #25373a;
  font-weight: 600;
+ padding: 0px 20px; 
 }
 
 input {
     border: none;
     outline: none;
     box-shadow: none;
+    background-color: white;
 }
+
+
 
 
 /* Game container */
@@ -65,8 +73,9 @@ input {
 }
 
 
-.letter {
-    background-color: white;
+#letter {
+    background-color: rgba(255, 255, 255, 0.862);
+    text-align: center;
     height: 50px;
     width: 50px; 
     border-radius: 15px; 
@@ -74,6 +83,7 @@ input {
     justify-content: center;
     align-items: center;
     font-size: 28px;
+    text-transform: uppercase;
 }
 
 .letter p {
@@ -89,3 +99,5 @@ input {
     font-size: 24px;
     text-transform: uppercase;
 }
+
+
