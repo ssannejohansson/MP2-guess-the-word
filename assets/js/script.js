@@ -37,9 +37,9 @@ let gameInfo = '<div class="game-info">' +
                 '<p>Hint:</p>' +
                 '<p id="hint"></p>' +
                 '<p>Wrong letters:</p>' +
-                '<p id="wrong-letters">a, b, c</p>' +
+                '<p id="wrong-letters"></p>' +
                 '<p>Remaining guesses:</p>' +
-                '<p id="rem-letters">10</p>' +
+                '<p id="rem-guess"></p>' +
                 '</div>';
 
 let resetBtn = '<button type="button" class="btn btn-primary mt-2" id="reset-btn">Reset Game</button>';
@@ -51,6 +51,7 @@ $("#letter-container").removeClass("d-none");
 $("#typing-input").removeClass("d-none");
 $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
+$("#rem-guess").text(maxGuess);
 $("#reset-btn").on("click", randomWord);
 }
 
@@ -84,21 +85,28 @@ const inputs = document.querySelector("#letter-container"); // Container for let
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
     let word; // Fetches a random word 
     let hints; // Fetches a random hint 
-    let corrects = [];
-    let incorrects = []; 
+    let corrects = []; // Array of correct letters
+    let incorrects = []; // Array of incorrect letters
+    let maxGuess = 8;// Amount of guesses
     
+
 
 const typingInput = document.querySelector("#typing-input");
 const wrongLetter = document.querySelector("#wrong-letter");
+const guessLeft = document.querySelector("#rem-guess");
+
+
 
 
 function randomWord() {
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
     word = randomObject.word; // Fetches a random word 
     hints = randomObject.hint; // Fetches a random hint
+    maxGuess = 8;
     console.log(word);
 
     $("#hint").text(hints);
+    $("#rem-guess").text(maxGuess);
 
     let html = "";
     for (let i = 0; i < word.length; i++) {
@@ -126,12 +134,17 @@ function initGame(e) {
             }
         }
     } else {
+        maxGuess--; // Decrement amount of guesses by 1 
         incorrects.push(` ${key}`);
     }
 
-    }
-    $("#wrong-letters").text(incorrects)
+
+    $("#wrong-letters").text(incorrects);
+    $("#rem-guess").text(maxGuess);
+ }
     typingInput.value = ""; // Empty input-field after typing a letter
+
+    if (maxGuess === 0) {}
 }
 
 $(typingInput).on("input", initGame);
