@@ -105,6 +105,13 @@ select:focus {
     text-transform: uppercase;
 }
 
+#typing-input {
+    opacity: 0;
+    z-index: -999;
+    position: absolute; 
+
+}
+
 #game-info {
     width: 100%;
 }
