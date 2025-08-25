@@ -74,8 +74,7 @@ $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
 $("#reset-btn").on("click", randomWord);
-$("typing-input").addClass("d-none");
-$("#typing-input").focus();
+
 
 }
 
@@ -207,6 +206,7 @@ function randomWord() {
         html += `<input type="text" id="letter" disabled>`;
     }
 
+    $("letter").focus();
     inputs.innerHTML = html; 
 
 }

@@ -1,1 +1,2 @@
-# MP2-guess-the-word
+# Guess the Word
+
