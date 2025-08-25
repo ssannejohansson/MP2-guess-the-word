@@ -50,6 +50,33 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
  padding: 0px 20px; 
 }
 
+.custom-btn:hover {
+    background-color: #bdd8df;
+}
+
+.diff-btn {
+       height: 2rem;
+    width: fit-content;
+    border: 2px solid #eaeacd;
+    background-color: rgba(255, 255, 255, 0.336);
+    border-radius: 25px; 
+box-shadow: 1px 1px 15px -4px rgba(130, 130, 67, 0.505);
+-webkit-box-shadow: 1px 1px 15px -4px rgba(130, 130, 67, 0.505);
+-moz-box-shadow: 1px 1px 15px -4px rgba(130, 130, 67, 0.505);
+ color: #25373a;
+ font-weight: 600;
+ padding: 0px 20px;  
+}
+
+.diff-btn:hover {
+    background-color: #e2e2ad;
+}
+
+.active-btn {
+    background-color: #e2e2ad;
+    border: 2px solid #e2e2ad;
+}
+
 input {
     border: none;
     outline: none;

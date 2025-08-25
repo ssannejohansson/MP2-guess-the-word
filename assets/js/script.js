@@ -3,12 +3,10 @@
 // Selection dropdown variable 
 let selectDifficulty = '<div class="d-flex flex-column justify-content-center align-items-center ps-2 pe-2">' +
     '<p class="mb-0">Choose your difficulty</p>' +
-    '<button id="easy" onclick="changeDiff(1)">Easy</button>' +
-    '<button id="2" id="medium" onclick="changeDiff(2)">Medium</button>' +
-    '<button value="3" id="hard" onclick="changeDiff(3)">Hard</button>' +
-    '<p><strong>Easy:</strong> >5 letters, 8 guesses<br>' +
-    '<strong>Medium:</strong> >10 letters, 6 guesses<br>' +
-    '<strong>Hard:</strong> >15 letters, 4 guesses</p>'
+    '<div class="d-flex gap-2 mb-2 mt-2" id="button-container">' + 
+    '<button class="btn diff-btn" id="easy" onclick="changeDiff(1)">Easy</button>' +
+    '<button class="btn diff-btn" id="medium" onclick="changeDiff(2)">Medium</button>' +
+    '<button class="btn diff-btn"id="hard" onclick="changeDiff(3)">Hard</button></div>' +
     '</div>';
 
     // Instructions variable
@@ -18,8 +16,6 @@ let instructions = '<div class="d-flex flex-column justify-content-center align-
     '<button type="button" class="btn custom-btn mt-2" id="start-btn">Start Game</button>' +
     '</div>';
 
-
-    // Start button variable
 
 
 // Difficulty page
@@ -32,23 +28,30 @@ function diffPage(e) {
     $("#userInput").css("text-transform", "capitalize");
     $("#input-container").children().remove();
     $("#input-container").append(selectDifficulty).append(instructions);
+    changeDiff()
     $("#start-btn").on("click", startGame);
 }
 
-
 function changeDiff (difficulty) {
     if (difficulty === 1) {
+        $("#easy").on("click").toggleClass("active-btn"); 
+        $("#medium, #hard").on("click").removeClass("active-btn");
         wordList = easyWords.slice();
     } else if (difficulty === 2) {
+          $("#medium").on("click").toggleClass("active-btn"); 
+          $("#easy, #hard").on("click").removeClass("active-btn");
         wordList = mediumWords.slice();
-    } else if (difficulty === 3) {
+    } else if (difficulty === 3) { 
+          $("#hard").on("click").toggleClass("active-btn"); 
+          $("#medium, #easy").on("click").removeClass("active-btn");
         wordList = hardWords.slice();
+        
     }
 };
 
 // Game info variable
 let gameInfo = '<div class="d-flex flex-column p-2" id="game-info">' +
-                '<h6>Hint:</h6>' +
+                '<h6>Hint:</h6><p id="hint"></p>' +
                 '<p id="hint"></p>' +
                 '<h6>Wrong letters:</h6>' +
                 '<p id="wrong-letters"></p>' +
@@ -77,20 +80,84 @@ $("#reset-btn").on("click", randomWord);
 let wordList =  [];
 
 const easyWords = [{
-    word: "cat",
-    hint: "says meow"
+    word: "apple",
+    hint: "a fruit that keeps the doctor away"
 }, 
 {
-    word: "dog",
-    hint: "says woff"
+    word: "pizza",
+    hint: "a cheesy favourite from Italy"
+}, 
+{
+    word: "beach",
+    hint: "sandy spot by the ocean"
+}, 
+{
+    word: "sheep",
+    hint: "woolly animal that goes 'baa'"
+}, 
+{
+    word: "cloud",
+    hint: "fluffy thing in the sky or used in tech"
+}, 
+{
+    word: "ghost",
+    hint: "spooky and white"
+}, 
+{
+    word: "light",
+    hint: "opposite of dark"
 }];
 
 const mediumWords = [{
-    word: "water",
-    hint: "in our ocean"
+    word: "elephant",
+    hint: "largest land animal"
+},
+{
+    word: "computer",
+    hint: "machine used for work or games"
+},
+{
+    word: "backpack",
+    hint: "something you carry on your back"
+},
+{
+    word: "airplane",
+    hint: "carries passengers in the sky"
+},
+{
+    word: "umbrella",
+    hint: "protects you from rain"
+},
+{
+    word: "fireworks",
+    hint: "loud and colorful show in the sky"
 }];
 
 const hardWords = [{
+    word: "brainstorming",
+    hint: "creative idea generation process"
+},
+{
+    word: "relationship",
+    hint: "a connection between people"
+},
+{
+    word: "investigation",
+    hint: "careful search or examination"
+},
+{
+    word: "elephants",
+    hint: "lives in africa"
+},
+{
+    word: "elephants",
+    hint: "lives in africa"
+},
+{
+    word: "elephants",
+    hint: "lives in africa"
+},
+{
     word: "elephants",
     hint: "lives in africa"
 }];
@@ -138,12 +205,12 @@ function randomWord() {
     inputs.innerHTML = html; 
 
 }
-changeDiff();
+
 randomWord();
 
 
 
-function initGame(e) {
+function gameFunc(e) {
     let key = e.target.value;
     if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
