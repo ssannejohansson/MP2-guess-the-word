@@ -74,6 +74,9 @@ $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
 $("#reset-btn").on("click", randomWord);
+$("typing-input").addClass("d-none");
+$("#typing-input").focus();
+
 }
 
 // GAME FUNCTIONALITY
