@@ -216,6 +216,8 @@ function randomWord() {
 
 
 function initGame(e) {
+    $("typing-input").addClass("d-none");
+    $("#typing-input").focus();
     let key = e.target.value;
     if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
