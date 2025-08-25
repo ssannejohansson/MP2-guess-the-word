@@ -41,7 +41,7 @@ function changeDiff (difficulty) {
     } else if (difficulty === 2) {
           $("#medium").on("click").toggleClass("active-btn"); 
           $("#easy, #hard").on("click").removeClass("active-btn");
-        wordList.push(...hardWords);
+        wordList.push(...mediumWords);
     } else if (difficulty === 3) { 
           $("#hard").on("click").toggleClass("active-btn"); 
           $("#medium, #easy").on("click").removeClass("active-btn");
