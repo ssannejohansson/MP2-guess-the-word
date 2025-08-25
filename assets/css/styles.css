@@ -146,8 +146,43 @@ select:focus {
     width: 100%;
 }
 
+/* MODAL */ 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  top: 25%;
+  left: 35%;
+  z-index: 1; /* Sit on top */
+  width: 30%; /* Full width */
+  height: 40%; /* Full height */
+  border-radius: 16px; 
+  background-color: white;
+}
 
+/* Modal Content/Box */
+#modal-content {
+    display: flex;
+    flex-direction: column;
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
 
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
 
 
 /* Media query: Large phones (420px and up) */

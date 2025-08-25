@@ -240,9 +240,24 @@ function initGame(e) {
  }
     typingInput.value = ""; // Empty input-field after typing a letter
 
+let modal = document.getElementById("myModal");
+
+
+
+function closeModal() {
+$(modal).css("display", "none");
+}
+
+
+
+
+
+
 setTimeout(() => {
     if (corrects.length === word.length) { // If user found all letters
-        alert(`Congrats! You found the word ${word.toUpperCase()}`);
+        $(modal).css("display", "block");
+        $(".close").on("click", closeModal);
+        //alert(`Congrats! You found the word ${word.toUpperCase()}`);
         randomWord(); // The game starts over
     } else if (maxGuess < 1) { // If amount of guesses is less than 1
         alert("Game over!");
