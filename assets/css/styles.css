@@ -96,7 +96,7 @@ select:focus {
 /* Game container */
 
 #game-container {
-    width: 80%;
+    width: 90%;
     height: 90%;
 
     /* From https://css.glass */
@@ -109,7 +109,7 @@ select:focus {
 
 
 #letter {
-    background-color: var(--input-color);
+    background-color: rgba(255, 255, 255, 0.657);
     text-align: center;
     height: 50px;
     width: 50px; 
@@ -125,7 +125,7 @@ select:focus {
     margin-bottom: 0;
 }
 
-#userInput {
+#user-input {
     height: 2.5rem;
     width: 100%;
     background-color: var(--input-color);
@@ -148,4 +148,44 @@ select:focus {
 
 
 
+
+
+/* Media query: Large phones (420px and up) */
+@media screen and (min-width: 420px) {
+
+    
+}
+
+/* Media query: tablet and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Global styles */
+    p {
+        font-size: 1rem;
+    }
+
+    /* Game container */
+    #game-container {
+        width: 60%;
+        height: 70%;
+    }
+
+    /* Name input */
+    #user-input {
+        width: 50%;
+    }
+
+    /* Difficulty buttons */
+    .diff-btn {
+       height: 2.3rem;
+    width: fit-content;
+ font-size: 1rem;
+ padding: 0px 20px;  
+}
+}
+
+
+/* Media query: laptop and larger (992px and up) */
+@media screen and (min-width: 992px) {
+
+}
 

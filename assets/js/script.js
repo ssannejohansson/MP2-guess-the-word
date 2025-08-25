@@ -22,11 +22,11 @@ let instructions = '<div class="d-flex flex-column justify-content-center align-
 // Difficulty page
 
 function diffPage(e) {
-    const nameInput = document.getElementById("userInput").value; // Store input in a variable
+    const nameInput = document.getElementById("user-input").value; // Store input in a variable
     $("#heading-small").remove();
     $("#heading").removeClass("mb-4").addClass("mb-2");
     $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize");
-    $("#userInput").css("text-transform", "capitalize");
+    $("#user-input").css("text-transform", "capitalize");
     $("#input-container").children().remove();
     $("#input-container").append(selectDifficulty).append(instructions);
     changeDiff()
