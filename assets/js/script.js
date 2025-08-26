@@ -252,6 +252,7 @@ setTimeout(() => {
     if (corrects.length === word.length) { // If user found all letters
         $(modal).css("display", "block");
         $(".close").on("click", closeModal);
+        $("#start-over").on("click", closeModal);
         //alert(`Congrats! You found the word ${word.toUpperCase()}`);
         randomWord(); // The game starts over
     } else if (maxGuess < 1) { // If amount of guesses is less than 1
