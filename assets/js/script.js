@@ -267,7 +267,9 @@ setTimeout(() => {
             $(modal).css("display", "block");
             $("#score-count").text(`You got ${score} words right!`)
         $(".close").on("click", closeModal);
-        $("#start-over").on("click", closeModal);
+        $("#start-over").on("click", closeModal).on("click", randomWord);
+        score = 0;
+        
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
                 document.querySelectorAll("input")[i].value = word[i];
