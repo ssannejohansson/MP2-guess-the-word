@@ -74,9 +74,6 @@ $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
 $("#reset-btn").on("click", randomWord);
-$("typing-input").addClass("d-none");
-$("#typing-input").focus();
-
 }
 
 // GAME FUNCTIONALITY
@@ -204,7 +201,7 @@ function randomWord() {
 
     let html = "";
     for (let i = 0; i < word.length; i++) {
-        html += `<input type="text" id="letter" disabled>`;
+        html += `<input type="text" id="letter">`;
     }
 
     inputs.innerHTML = html; 
@@ -216,8 +213,6 @@ function randomWord() {
 
 
 function initGame(e) {
-    $("typing-input").addClass("d-none");
-    $("#typing-input").focus();
     let key = e.target.value;
     if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
