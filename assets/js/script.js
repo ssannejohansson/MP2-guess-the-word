@@ -168,6 +168,7 @@ const hardWords = [{
 // Game functionality
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
+const letterInput = document.querySelector("#letter"); // Container for letter-inputs
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
     let word; // Fetches a random word 
     let hints; // Fetches a random hint 
@@ -205,12 +206,13 @@ function randomWord() {
     }
 
     inputs.innerHTML = html; 
+    letterInput.innerHTML = html;
 
 }
 
 
 
-
+$("#letter").on("input", initGame);
 
 function initGame(e) {
     let key = e.target.value;
@@ -222,6 +224,7 @@ function initGame(e) {
             if (word[i] === key) {
                 corrects.push(key)
                 inputs.querySelectorAll("input")[i].value = key;
+                letterInput.querySelectorAll("input")[i].value = key;
             }
         }
     } else {
@@ -259,14 +262,15 @@ setTimeout(() => {
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
                 inputs.querySelectorAll("input")[i].value = word[i];
+                letterInput.querySelectorAll("input")[i].value = key;
             }
     }
     });
 }
 
 $(typingInput).on("input", initGame);
-$("#letter").on("input", initGame);
 document.addEventListener("keydown", () => typingInput.focus());
+document.addEventListener("keydown", () => letterInput.focus());
 
 
 
