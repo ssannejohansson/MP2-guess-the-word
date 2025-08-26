@@ -265,7 +265,9 @@ setTimeout(() => {
 }
 
 $(typingInput).on("input", initGame);
+$("#letter").on("input", initGame);
 document.addEventListener("keydown", () => typingInput.focus());
+
 
 
 
