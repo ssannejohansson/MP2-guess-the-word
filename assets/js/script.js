@@ -214,7 +214,7 @@ $("#letter").on("input", initGame);
 
 function initGame(e) {
     let key = e.target.value;
-    if(key.match([A-Za-z]) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
+    if(key.match(/[A-Za-z]/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
     if (word.includes(key)) { // If letter is found in the word
         for (let i = 0; i < word.length; i++) {
