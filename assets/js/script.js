@@ -274,7 +274,7 @@ setTimeout(() => {
         score++;
         $("#score").text(score);
         $(correctWord).css("color", "#56b856");
-     setTimeout (randomWord, 700); // The game starts over efter 1000ms
+     setTimeout (randomWord, 600); // The game starts over efter 1000ms
     } else if (maxGuess < 1) { // If amount of guesses is less than 1
             $(modal).css("display", "block");
             $("#score-count").text(`You got ${score} words right!`)
@@ -285,6 +285,7 @@ setTimeout(() => {
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
                 document.querySelectorAll("input")[i].value = word[i];
+                 $(correctWord).css("color", "#f9a1a1ff");
             }
     }
     });

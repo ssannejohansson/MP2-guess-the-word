@@ -56,6 +56,9 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 .custom-btn:hover {
     background-color: #bdd8df;
 }
+span {
+    
+color: #ff6a6a; }
 
 .diff-btn {
        height: 2rem;
