@@ -75,7 +75,7 @@ let scoreCount = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-c
                     '</div>';
 
                 // Reset button variable
-let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Play again</button>';
+let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Reset Game</button>';
 
 // Start game page
 function startGame() {
@@ -263,7 +263,7 @@ let modal = document.getElementById("myModal");
 
 
 function closeModal() {
-$(modal).css("display", "none");
+$(modal).addClass("d-none");
 }
 
 correctWord = document.querySelectorAll("#letter");
@@ -275,8 +275,10 @@ setTimeout(() => {
         $("#score").text(score);
         $(correctWord).css("color", "#56b856");
      setTimeout (randomWord, 600); // The game starts over efter 1000ms
-    } else if (maxGuess < 1) { // If amount of guesses is less than 1
-            $(modal).css("display", "block");
+    } else if (maxGuess < 1) { // If amount of guesses is less than 1  
+        setTimeout (function() {
+            $(modal).removeClass("d-none");
+         }, 400);
             $("#score-count").text(`You got ${score} words right!`)
         $(".close").on("click", closeModal);
         $("#start-over").on("click", closeModal).on("click", randomWord);
