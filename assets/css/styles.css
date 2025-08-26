@@ -56,9 +56,7 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 .custom-btn:hover {
     background-color: #bdd8df;
 }
-span {
-    
-color: #ff6a6a; }
+
 
 .diff-btn {
        height: 2rem;
@@ -166,6 +164,10 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
  padding: 0px 20px; 
 }
 
+.custom-btn-modal:hover {
+    background-color: #bdd8df;
+}
+
 .modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -177,18 +179,10 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
   background-color: rgba(206, 229, 230, 0.384);         
 }
 
-/* Modal Content/Box */
-#modal-content {
-  background-color: #fefefe;
-  margin: 80% auto; 
-  padding: 20px;
-  border-radius: 16px;
-  height: 30%;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-#modal-text {
-
+/* container for close-button */
+#modal-header {
+    padding-top: 1px; 
+    padding-right: 11px;
 }
 
 /* The Close Button */
@@ -207,6 +201,18 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
   cursor: pointer;
 }
 
+/* Modal Content/Box */
+#modal-content {
+  background-color: #fefefe;
+  margin: 80% auto; 
+  padding-bottom: 20px; 
+  border-radius: 16px;
+  height: 30%;
+  width: 80%;
+}
+
+
+
 
 /* Media query: Large phones (420px and up) */
 @media screen and (min-width: 420px) {
@@ -215,6 +221,18 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
     height: 50px;
     width: 50px; 
     }
+
+    /* Modal */
+#modal-content {
+    max-height: 400px;
+      max-width: 400px;
+}
+.custom-btn-modal {
+        height: 3rem;
+        font-size: 1rem; 
+
+}
+}
 
     
 }
@@ -244,6 +262,7 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
  font-size: 1rem;
  padding: 0px 20px;  
 }
+
 }
 
 

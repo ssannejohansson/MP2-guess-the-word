@@ -75,7 +75,7 @@ let scoreCount = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-c
                     '</div>';
 
                 // Reset button variable
-let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Start Over</button>';
+let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Play again</button>';
 
 // Start game page
 function startGame() {
@@ -88,7 +88,7 @@ $("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
 $("#score").text(score);
-$("#reset-btn").click(function() {
+$("#reset-btn").click(function() { // returns to first page
     location.reload()
 });
 }
