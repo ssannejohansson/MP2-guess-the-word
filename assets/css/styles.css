@@ -113,8 +113,8 @@ select:focus {
 #letter {
     background-color: rgba(255, 255, 255, 0.657);
     text-align: center;
-    height: 50px;
-    width: 50px; 
+    height: 40px;
+    width: 40px; 
     border-radius: 15px; 
     display: flex;
     justify-content: center;
@@ -151,7 +151,7 @@ select:focus {
 /* MODAL */ 
 
 .custom-btn-modal{
-    height: 1.5rem;
+    height: 2rem;
     width: fit-content;
     background-color: #cae6ec;
     border-radius: 25px; 
@@ -208,6 +208,11 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 
 /* Media query: Large phones (420px and up) */
 @media screen and (min-width: 420px) {
+    /* Letter-box */ 
+    #letter {
+    height: 50px;
+    width: 50px; 
+    }
 
     
 }
@@ -242,6 +247,17 @@ box-shadow: 1px 1px 15px -4px rgba(83, 114, 120, 0.75);
 
 /* Media query: laptop and larger (992px and up) */
 @media screen and (min-width: 992px) {
+    #lg-dev-container {
+        margin-top: 15px; 
+        width: 100%; 
+        display: flex;
+        justify-content: space-between;
+    }
+    .lg-dev {
+        display: flex;
+        flex-direction: column; 
+        width: 33%;
+    }
 
 }
 

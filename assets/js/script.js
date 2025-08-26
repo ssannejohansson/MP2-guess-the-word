@@ -54,15 +54,24 @@ function changeDiff (difficulty) {
 let gameInfo = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-center" id="game-info">' +
                 '<h6>Hint</h6>' +
                 '<p id="hint"></p>' +
+                '<div id="lg-dev-container">' +
+                '<div class="lg-dev">' +
                 '<h6>Wrong letters</h6>' +
                 '<p id="wrong-letters"></p>' +
-                '<h6>Remaining guesses:</h6>' +
+                '</div>' +
+                '<div class="lg-dev">' +
+                '<h6>Guesses left</h6>' +
                 '<p id="rem-guess"></p>' +
+                '</div>' +
+                '<div class="lg-dev">' +
+                '<h6>Current score</h6>' +
+                '<p id="score"></p>' +
+                '</div>' +
+                '</div>' +
                 '</div>';
 
 let scoreCount = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-center" id="score-container">' +
-                    '<h6>Score</h6>' +
-                    '<p id="score"></p>' + 
+                    
                     '</div>';
 
                 // Reset button variable
@@ -75,7 +84,7 @@ $("#heading").text("Good luck!").addClass("mb-4");
 $("#input-container").children().remove();
 $("#letter-container").removeClass("d-none");
 $("#typing-input").removeClass("d-none");
-$("#game-container").append(gameInfo).append(scoreCount).append(resetBtn);
+$("#game-container").append(gameInfo).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
 $("#score").text(score);
