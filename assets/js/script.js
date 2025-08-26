@@ -168,7 +168,7 @@ const hardWords = [{
 // Game functionality
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
-const letterInput = document.querySelector("#letter"); // Container for letter-inputs
+const letterInput = document.querySelector("#letter"); // Letter input (for mobile)
     let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array 
     let word; // Fetches a random word 
     let hints; // Fetches a random hint 
@@ -206,8 +206,6 @@ function randomWord() {
     }
 
     inputs.innerHTML = html; 
-    letterInput.innerHTML = html;
-
 }
 
 
@@ -223,8 +221,7 @@ function initGame(e) {
             // Showing matched letter in the input value
             if (word[i] === key) {
                 corrects.push(key)
-                inputs.querySelectorAll("input")[i].value = key;
-                letterInput.querySelectorAll("input")[i].value = key;
+                document.querySelectorAll("input")[i].value = key;
             }
         }
     } else {
@@ -261,8 +258,7 @@ setTimeout(() => {
         alert("Game over!");
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
-                inputs.querySelectorAll("input")[i].value = word[i];
-                letterInput.querySelectorAll("input")[i].value = key;
+                document.querySelectorAll("input")[i].value = word[i];
             }
     }
     });
@@ -270,7 +266,7 @@ setTimeout(() => {
 
 $(typingInput).on("input", initGame);
 document.addEventListener("keydown", () => typingInput.focus());
-document.addEventListener("keydown", () => letterInput.focus());
+
 
 
 
