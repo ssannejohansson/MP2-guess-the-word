@@ -213,8 +213,8 @@ function randomWord() {
 $("#letter").on("input", initGame);
 
 function initGame(e) {
-    let key = e.target.value;
-    if(key.match(/[a-zA-Z]/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
+    let key = e.target.value.toLowerCase();
+    if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
     if (word.includes(key)) { // If letter is found in the word
         for (let i = 0; i < word.length; i++) {
