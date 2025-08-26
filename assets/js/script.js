@@ -60,6 +60,11 @@ let gameInfo = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-cen
                 '<p id="rem-guess"></p>' +
                 '</div>';
 
+let scoreCount = '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-center" id="score-container">' +
+                    '<h6>Score</h6>' +
+                    '<p id="score"></p>' + 
+                    '</div>';
+
                 // Reset button variable
 let resetBtn = '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Reset Game</button>';
 
@@ -70,9 +75,10 @@ $("#heading").text("Good luck!").addClass("mb-4");
 $("#input-container").children().remove();
 $("#letter-container").removeClass("d-none");
 $("#typing-input").removeClass("d-none");
-$("#game-container").append(gameInfo).append(resetBtn);
+$("#game-container").append(gameInfo).append(scoreCount).append(resetBtn);
 $("#hint").text(hints);
 $("#rem-guess").text(maxGuess);
+$("#score").text(score);
 $("#reset-btn").on("click", randomWord);
 }
 
@@ -175,12 +181,15 @@ const letterInput = document.querySelector("#letter"); // Letter input (for mobi
     let corrects = []; // Array of correct letters
     let incorrects = []; // Array of incorrect letters
     let maxGuess = 8;// Amount of guesses
-    
+    let score = 0;
+  
 
 
 const typingInput = document.querySelector("#typing-input");
 const wrongLetter = document.querySelector("#wrong-letters");
 const guessLeft = document.querySelector("#rem-guess");
+
+
 
 
 
@@ -198,6 +207,8 @@ function randomWord() {
     $("#hint").text(hints);
     $("#rem-guess").text(maxGuess);
     $("#wrong-letters").text(incorrects);
+    $("#score").text(score);
+  
   
 
     let html = "";
@@ -213,6 +224,7 @@ function randomWord() {
 $("#letter").on("input", initGame);
 
 function initGame(e) {
+
     let key = e.target.value.toLowerCase();
     if(key.match(/^[A-Za-z]+$/) && !incorrects.includes(` ${key}`) && !corrects.includes(key)) {
          console.log(key);   
@@ -246,17 +258,16 @@ $(modal).css("display", "none");
 
 
 
-
-
 setTimeout(() => {
     if (corrects.length === word.length) { // If user found all letters
-        $(modal).css("display", "block");
+        score++;
+        $("#score").text(score);
+     randomWord(); // The game starts over  
+    } else if (maxGuess < 1) { // If amount of guesses is less than 1
+            $(modal).css("display", "block");
+            $("#score-count").text(`You got ${score} words right!`)
         $(".close").on("click", closeModal);
         $("#start-over").on("click", closeModal);
-        //alert(`Congrats! You found the word ${word.toUpperCase()}`);
-        randomWord(); // The game starts over
-    } else if (maxGuess < 1) { // If amount of guesses is less than 1
-        alert("Game over!");
         for (let i = 0; i < word.length; i++) {
             // Show all letters in the input
                 document.querySelectorAll("input")[i].value = word[i];
