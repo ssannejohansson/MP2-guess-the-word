@@ -266,14 +266,15 @@ function closeModal() {
 $(modal).css("display", "none");
 }
 
-
+correctWord = document.querySelectorAll("#letter");
 
 
 setTimeout(() => {
     if (corrects.length === word.length) { // If user found all letters
         score++;
         $("#score").text(score);
-     randomWord(); // The game starts over  
+        $(correctWord).css("color", "#56b856");
+     setTimeout (randomWord, 700); // The game starts over efter 1000ms
     } else if (maxGuess < 1) { // If amount of guesses is less than 1
             $(modal).css("display", "block");
             $("#score-count").text(`You got ${score} words right!`)
