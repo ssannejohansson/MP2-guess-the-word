@@ -101,6 +101,7 @@ Buttons are bootstrap-buttons with custom styling to match the website. <br>
 <img src="readme-assets/custom-btn.png" width="300">
 <img src="readme-assets/custom-btn-hover.png" width="300"><br>
 Custom button and custom button on hover <br>
+
 <img src="readme-assets/diff-btn.png" width="400">
 <img src="readme-assets/diff-btn-selected.png" width="400"><br>
 Difficulty buttons and difficulty buttons on hover / while selected.
