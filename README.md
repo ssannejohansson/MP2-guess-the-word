@@ -15,6 +15,7 @@ Link to deployed site: [Guess the Word](https://ssannejohansson.github.io/MP2-gu
 - Input field for personal greeting
 - Possibility to choose from three different difficulty levels
 - Hints for every word
+- Feedback after game over
 
 
 ### User Stories
@@ -49,8 +50,8 @@ Link to deployed site: [Guess the Word](https://ssannejohansson.github.io/MP2-gu
 
 ### Color Scheme
 For color scheme, I took inspiration from the background image to generate a scheme that looked good. For this, I used [Muzli Colors](https://colors.muz.li/).<br>
-<img src="assets/images/background.jpg" width="300px">
-<img src="readme-assets/colorscheme.svg" width="300px">
+<img src="assets/images/background.jpg" width="400px" height="300">
+<img src="readme-assets/colorscheme.svg" width="400px" height="300">
 
 ### Typography
 
@@ -68,7 +69,7 @@ For paragraphs, I used [Inter Medium](https://fonts.google.com/specimen/Inter?qu
 
 <img src="assets/images/background.jpg">
 
-The background are downloaded from [Unsplash](https://unsplash.com/). Please see the credits section for attributions. 
+The background are downloaded from [Unsplash](https://unsplash.com/). Please see the credits section for attribution. 
 
 ### Wireframes
 
@@ -96,7 +97,7 @@ The favicon is created using [Favicon.io](https://favicon.io/favicon-converter/)
 <img src="assets/images/favicon-32x32.png">
 
 **Buttons** <br>
-Buttons are bootstrap-buttons with custom styling to match the website. 
+Buttons are bootstrap-buttons with custom styling to match the website. <br>
 <img src="readme-assets/custom-btn.png" width="300">
 <img src="readme-assets/custom-btn-hover.png" width="300"><br>
 Custom button and custom button on hover <br>
@@ -138,7 +139,7 @@ HTML, CSS and JavaScript.
 
 [Favicon.io](https://favicon.io/favicon-converter/) - To create favicon. 
 
-[Google Fonts](https://fonts.google.com/) To import the fonts used on the website. 
+[Google Fonts](https://fonts.google.com/) - To import the fonts used on the website. 
 
 [Unsplash](https://unsplash.com/) - For background image. 
 
