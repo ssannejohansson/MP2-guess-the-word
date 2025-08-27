@@ -108,7 +108,7 @@ const easyWords = [
   {word: "ghost", hint: "Something spooky and white"},
   {word: "light", hint: "The opposite of dark"},
   {word: "blush", hint: "Something you can put on your cheeks"},
-  {word: "spice", hint: "Somehting Used in cooking to add flavor"},
+  {word: "spice", hint: "Somehting used in cooking to add flavor"},
   {word: "brick", hint: "A block used to build houses"},
   {word: "whale", hint: "The largest animal in the ocean"},
   {word: "lemon", hint: "A sour yellow fruit"},
@@ -243,6 +243,7 @@ function initGame(e) {
       setTimeout(function () {
         $(modal).removeClass("d-none");
       }, 400);
+      $("#correct-word").text(`The correct word was ${word.toUpperCase()}.`);
       $("#score-count").text(`You got ${score} words right!`);
       $(".close").on("click", closeModal);
       $("#start-over").on("click", closeModal).on("click", randomWord);

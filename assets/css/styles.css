@@ -226,11 +226,11 @@ align-items: center;
 
     /* Modal */
 #modal-content {
-    min-height: 350px;
+    min-height: 300px;
     max-width: 600px;
 }
     #modal-content h5 {
-        font-size: 2rem;
+        font-size: 3rem;
         padding-bottom: 10px;
     }
 }
