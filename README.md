@@ -215,8 +215,6 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 
 [Jeff Starr](https://wp-mix.com/jquery-reload-current-page-click/) - Guide to create function for refreshing page on click.
 
-[Stack Overflow](https://stackoverflow.com/questions/17891173/how-to-efficiently-randomly-select-array-item-without-repeats) - The user Maeric's solution for avoiding repeats of the same word.  
-
 
 
 
