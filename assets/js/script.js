@@ -155,30 +155,43 @@ const hardWords = [
 
 ];
 
+let shuffledWordList = shuffleArray(wordList);
+let currentWordIndex = 0;
+
+function shuffleArray(arr) {
+  return arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+}
+
+
 // Game functionality
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
 const letterInput = document.querySelector("#letter"); // Letter input (for mobile)
-let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
-let word; // Fetches a random word
-let hints; // Fetches a random hint
-let corrects = []; // Array of correct letters
-let incorrects = []; // Array of incorrect letters
-let maxGuess = 8; // Amount of guesses
-let score = 0;
 
 const typingInput = document.querySelector("#typing-input");
 const wrongLetter = document.querySelector("#wrong-letters");
 const guessLeft = document.querySelector("#rem-guess");
 
 function randomWord() {
-  changeDiff();
-  let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
+  //Solution from chatGPT
+  if (currentWordIndex >= shuffledWordList.length) {
+    shuffledWordList = shuffleArray(wordList); // Optionally reshuffle
+    currentWordIndex = 0;
+  }
+
+  let randomObject = shuffledWordList[currentWordIndex++];
+  
   word = randomObject.word; // Fetches a random word
   hints = randomObject.hint; // Fetches a random hint
+
+
   maxGuess = 8; // Max amount of guesses
   corrects = []; // Array of correct letters
   incorrects = []; // Array of incorrect letters
+  score = 0;
   console.log(word);
 
   $("#hint").text(hints);
@@ -229,9 +242,10 @@ function initGame(e) {
     $(modal).addClass("d-none");
   }
 
-  correctWord = document.querySelectorAll("#letter");
+let correctWord = document.querySelectorAll("#letter");
 
   setTimeout(() => {
+ 
     if (corrects.length === word.length) {
       // If user found all letters
       score++;
