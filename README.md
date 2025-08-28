@@ -179,10 +179,15 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 
 ## Testing
 
-### W3C Validator
-I used [W3C Markup Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate the HTML and CSS on all pages of the website. 
+### W3C Validator and JSHint
+I used [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JS Hint](https://jshint.com/) to validate the HTML, CSS and JavaScript. 
+- **HTML** - No errors. 
+<img src="readme-assets/w3c-html.png">
 
-<details><summary>Show results</summary>
+- **CSS** - No errors. Warnings about variables and about vendor extensions coming from autoprefixes when I run the code through [Autoprefixer](https://autoprefixer.github.io/).
+<img src="readme-assets/w3c-css.png">
+
+- **JavaScript** - 
 
 ### Lighthouse
 
