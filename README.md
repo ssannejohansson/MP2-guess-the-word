@@ -180,6 +180,9 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 ## Testing
 
 ### W3C Validator
+I used [W3C Markup Validator](https://validator.w3.org/) and [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate the HTML and CSS on all pages of the website. 
+
+<details><summary>Show results</summary>
 
 ### Lighthouse
 
@@ -215,7 +218,7 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 
 [Jeff Starr](https://wp-mix.com/jquery-reload-current-page-click/) - Guide to create function for refreshing page on click.
 
-
+[ChatGPT](https://chatgpt.com/?openaicom) - Solution for avoiding the same word twice in one round. 
 
 
 ### Content
