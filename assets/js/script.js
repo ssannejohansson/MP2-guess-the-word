@@ -33,19 +33,23 @@ function diffPage(e) {
   $("#start-btn").on("click", startGame);
 }
 
+function shuffleWordlist() {
+      let wordList = wordList[Math.floor(Math.random() * wordList.length)];
+}
+
 function changeDiff(difficulty) {
   if (difficulty === 1) {
     $("#easy").on("click").toggleClass("active-btn");
     $("#medium, #hard").on("click").removeClass("active-btn");
-    wordList.push(...easyWords);
+    wordList.filter(word => word.length <= 5);
   } else if (difficulty === 2) {
     $("#medium").on("click").toggleClass("active-btn");
     $("#easy, #hard").on("click").removeClass("active-btn");
-    wordList.push(...mediumWords);
+    wordList.filter(word => word.length > 7);
   } else if (difficulty === 3) {
     $("#hard").on("click").toggleClass("active-btn");
     $("#medium, #easy").on("click").removeClass("active-btn");
-    wordList.push(...hardWords);
+    wordList.filter(word => word.length >=9);
   }
 }
 
@@ -97,9 +101,7 @@ function startGame() {
 
 // GAME FUNCTIONALITY
 
-let wordList = [];
-
-const easyWords = [
+const wordList = [
   {word: "apple", hint: "A fruit that keeps the doctor away"},
   {word: "pizza", hint: "A cheesy favourite from Italy"},
   {word: "beach", hint: "A sandy spot by the ocean"},
@@ -115,9 +117,6 @@ const easyWords = [
   {word: "mouth", hint: "You use it to talk"},
   {word: "dough", hint: "Something u use to bake bread and cookies"},
   {word: "thorn", hint: "A sharp part of a rose stem"},
-];
-
-const mediumWords = [
   {word: "elephant", hint: "The largest land animal"},
   {word: "computer",hint: "A machine used for work or games"},
   {word: "backpack", hint: "Something you carry on your back"},
@@ -133,10 +132,6 @@ const mediumWords = [
   {word: "sandwich", hint: "Food made by placing filling between bread"},
   {word: "skeleton", hint: "The framework of bones inside of a body"},
   {word: "monster", hint: "A scary creature"},
-
-];
-
-const hardWords = [
   {word: "brainstorming", hint: "A creative idea generation process"},
   {word: "relationship", hint: "A connection between people"},
   {word: "investigation", hint: "A careful search or examination"},
@@ -152,14 +147,14 @@ const hardWords = [
   {word: "daydreaming", hint: "Letting your mind wander while awake"},
   {word: "houseplant", hint: "Green, living things people keep indoors"},
   {word: "thunderstorm", hint: "A storm with lightning and thunder"},
-
 ];
+
 
 // Game functionality
 
 const inputs = document.querySelector("#letter-container"); // Container for letter-inputs
 const letterInput = document.querySelector("#letter"); // Letter input (for mobile)
-let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
+let randomObject = wordList.length; // Gets a random object from wordList array
 let word; // Fetches a random word
 let hints; // Fetches a random hint
 let corrects = []; // Array of correct letters
@@ -171,9 +166,22 @@ const typingInput = document.querySelector("#typing-input");
 const wrongLetter = document.querySelector("#wrong-letters");
 const guessLeft = document.querySelector("#rem-guess");
 
+function noRepeats(wordList) {
+  let copy = wordList.slice(0);
+  return function() {
+    if (copy.length < 1) {
+      copy = wordList.slice(0); 
+    }
+    let index = Math.floor(Math.random() * copy.length);
+    let item = copy[index];
+    copy.splice(index, 1);
+    return item;
+  };
+}
+
 function randomWord() {
-  changeDiff();
-  let randomObject = wordList[Math.floor(Math.random() * wordList.length)]; // Gets a random object from wordList array
+  noRepeats();
+  let randomObject = wordList.length;  // Gets a random object from wordList array
   word = randomObject.word; // Fetches a random word
   hints = randomObject.hint; // Fetches a random hint
   maxGuess = 8; // Max amount of guesses
@@ -229,11 +237,14 @@ function initGame(e) {
     $(modal).addClass("d-none");
   }
 
-  correctWord = document.querySelectorAll("#letter");
+let correctWord = document.querySelectorAll("#letter");
 
-  setTimeout(() => {
+  
+setTimeout(() => {
+
     if (corrects.length === word.length) {
       // If user found all letters
+
       score++;
       $("#score").text(score);
       $(correctWord).css("color", "#56b856");

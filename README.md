@@ -35,13 +35,17 @@ Link to deployed site: [Guess the Word](https://ssannejohansson.github.io/MP2-gu
 
 #### Must Have
 - A responsive website that looks and functions well on all screensizes 
+- JavaScript for interactivity
 - Clean, focused design 
 - Search Engine Optimization (SEO)
+- A list of wrong letters
 - Possibility to restart the game
 
 #### Should Have
 - A modal that communicates when the game is over
 - Different difficulty levels
+- Random, shuffeled words 
+- Score count
 
 #### Could Have
 - A personal greeting
@@ -203,13 +207,15 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 
 [@SharathchandarK](https://www.youtube.com/watch?v=JYVycJ2CXiI) - Tutorial for creating word guessing game. 
 
-[StackOverFlow](https://stackoverflow.com/questions/64712803/change-game-difficulty-javascript) - The member Marc's solution for changing difficulty. 
+[Stack Overflow](https://stackoverflow.com/questions/64712803/change-game-difficulty-javascript) - The user Marc's solution for changing difficulty. 
 
 [w3scools](https://www.w3schools.com/howto/howto_css_modals.asp) - Guide to create a modal.
 
 [David Chedrick](https://dev.to/davidchedrick/creating-a-simple-timer-and-score-keeper-in-javascript-394g) - Tutorial for score-keeping.
 
 [Jeff Starr](https://wp-mix.com/jquery-reload-current-page-click/) - Guide to create function for refreshing page on click.
+
+[Stack Overflow](https://stackoverflow.com/questions/17891173/how-to-efficiently-randomly-select-array-item-without-repeats) - The user Maeric's solution for avoiding repeats of the same word.  
 
 
 
