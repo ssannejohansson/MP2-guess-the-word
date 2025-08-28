@@ -166,11 +166,11 @@ I've used GitHub Pages to deploy this site. To deploy a site on GitHub Pages you
 ### Local Development 
 **How to Fork**
 
-To fork the repository, log in to your GitHub account, go to the repository of the project you want to fork [this one](https://github.com/ssannejohansson/MS2-guess-the-word) for this project, and click on the Fork button in the top right corner. 
+To fork the repository, log in to your GitHub account, go to the repository of the project you want to fork [this one](https://github.com/ssannejohansson/MP2-guess-the-word) for this project, and click on the Fork button in the top right corner. 
 
 **How to Clone**
 
-To clone the repository, log in your GitHub accout, go to the repository of the project you want to clone [this one](https://github.com/ssannejohansson/MS2-guess-the-word.git) for this project, click on the **Code** button and select if you want to clone with HTTPS, SSH or GitHub CLI and copy the code. Open the **terminal** in your code editor and change directory to the location you want to use for the cloned directory and type *git clone* into the terminal and paste the link you copied. Press **enter**. 
+To clone the repository, log in your GitHub accout, go to the repository of the project you want to clone [this one](https://github.com/ssannejohansson/MP2-guess-the-word.git) for this project, click on the **Code** button and select if you want to clone with HTTPS, SSH or GitHub CLI and copy the code. Open the **terminal** in your code editor and change directory to the location you want to use for the cloned directory and type *git clone* into the terminal and paste the link you copied. Press **enter**. 
 
 
 ## Testing
