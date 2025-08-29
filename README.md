@@ -206,11 +206,19 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | -------- | ------- | -------- | ------- | -------- | ------- | -------- |  
 | Chrome | ![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png)  | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
 | Firefox | ![screenshot](readme-assets/firefox-start.png) | ![screenshot](readme-assets/firefox-diff.png) | ![screenshot](readme-assets/firefox-game.png) | ![screenshot](readme-assets/firefox-modal.png) | ![screenshot](readme-assets/firefox-404.png) | Work as expected | 
-| Edge | ![screenshot](readme-assets/edge-home.png) | ![screenshot](readme-assets/edge-adopt.png) | ![screenshot](readme-assets/edge-contact.png) | ![screenshot](readme-assets/edge-success.png) | ![screenshot](readme-assets/edge-thankyou.png) | ![screenshot](readme-assets/edge-404.png) | Work as expected | 
-| Safari | ![screenshot](readme-assets/safari-home.png) | ![screenshot](readme-assets/safari-adopt.png) | ![screenshot](readme-assets/safari-contact.png) | ![screenshot](readme-assets/safari-success.png) | ![screenshot](readme-assets/safari-thankyou.png) | ![screenshot](readme-assets/safari-404.png) | Work as expected | 
+| Edge | ![screenshot](readme-assets/edge-start.png) | ![screenshot](readme-assets/edge-diff.png) | ![screenshot](readme-assets/edge-game.png) | ![screenshot](readme-assets/edge-modal.png) | ![screenshot](readme-assets/edge-404.png) | Work as expected | 
+| Safari | ![screenshot](readme-assets/safari-start.png) | ![screenshot](readme-assets/safari-diff.png) | ![screenshot](readme-assets/safari-game.png) | ![screenshot](readme-assets/safari-modal.png)  | ![screenshot](readme-assets/safari-404.png) | Work as expected | 
 
 
 ### Responsiveness
+
+| Device | Start Page | Difficulty Page | Game Page | Modal | 404 | Notes |
+| -------- | ------- | -------- | ------- | -------- | -------- | -------- | 
+| Mobile (DevTools) | ![screenshot](readme-assets/mobile-home.png) | ![screenshot](readme-assets/mobile-adopt.png) | ![screenshot](readme-assets/mobile-contact.png) | ![screenshot](readme-assets/mobile-success.png) | ![screenshot](readme-assets/mobile-thankyou.png) | ![screenshot](readme-assets/mobile-404.png) | Work as expected | 
+| Iphone 16 Pro Max |![screenshot](readme-assets/iphone-home.PNG) | ![screenshot](readme-assets/iphone-adopt.PNG)| ![screenshot](readme-assets/iphone-contact.PNG) | ![screenshot](readme-assets/iphone-success.PNG) | ![screenshot](readme-assets/iphone-thankyou.PNG) | ![screenshot](readme-assets/iphone-404.PNG) | Work as expected | 
+| Tablet (DevTools) |![screenshot](readme-assets/tablet-home.png) | ![screenshot](readme-assets/tablet-adopt.png) | ![screenshot](readme-assets/tablet-contact.png) | ![screenshot](readme-assets/tablet-success.png) | ![screenshot](readme-assets/tablet-thankyou.png) | ![screenshot](readme-assets/tablet-404.png) | Work as expected | 
+| 13.6 inch MacBook Air M2  |![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png) | ![screenshot](readme-assets/chrome-thankyou.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
+| Laptop L (Devtools) | ![screenshot](readme-assets/laptop-l-home.png) | ![screenshot](readme-assets/laptop-l-adopt.png)| ![screenshot](readme-assets/laptop-l-contact.png) | ![screenshot](readme-assets/laptop-l-success.png) | ![screenshot](readme-assets/laptop-l-thankyou.png) | ![screenshot](readme-assets/laptop-l-404.png) | Work as expected | 
 
 ### Testing Client Goals
 
