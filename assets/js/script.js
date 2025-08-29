@@ -272,7 +272,7 @@ let correctWord = document.querySelectorAll("#letter"); // All letters in a corr
       $("#score").text(updatedScore);  
       $(correctWord).css("color", "#6ac56aff");
       setTimeout(randomWord, 600); 
-    } else if (maxGuess < 1) {
+    } else if (maxGuess === 0) {
       // If amount of guesses is less than 1
       setTimeout(function () {
         $(modal).removeClass("d-none");
@@ -282,6 +282,7 @@ let correctWord = document.querySelectorAll("#letter"); // All letters in a corr
       $(".close").on("click", closeModal);
       $("#start-over").on("click", closeModal).on("click", randomWord);
       score = 0;
+      maxGuess = 5;
 
       for (let i = 0; i < word.length; i++) {
         // Show all letters in the input
