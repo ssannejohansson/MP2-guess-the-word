@@ -214,15 +214,48 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 
 | Device | Start Page | Difficulty Page | Game Page | Modal | 404 | Notes |
 | -------- | ------- | -------- | ------- | -------- | -------- | -------- | 
-| Mobile (DevTools) | ![screenshot](readme-assets/mobile-home.png) | ![screenshot](readme-assets/mobile-adopt.png) | ![screenshot](readme-assets/mobile-contact.png) | ![screenshot](readme-assets/mobile-success.png) | ![screenshot](readme-assets/mobile-thankyou.png) | ![screenshot](readme-assets/mobile-404.png) | Work as expected | 
+| Mobile (DevTools) | ![screenshot](readme-assets/mobile-start.png) | ![screenshot](readme-assets/mobile-diff.png) | ![screenshot](readme-assets/mobile-game.png) | ![screenshot](readme-assets/mobile-modal.png) | ![screenshot](readme-assets/mobile-404.png) | Work as expected | 
 | Iphone 16 Pro Max |![screenshot](readme-assets/iphone-home.PNG) | ![screenshot](readme-assets/iphone-adopt.PNG)| ![screenshot](readme-assets/iphone-contact.PNG) | ![screenshot](readme-assets/iphone-success.PNG) | ![screenshot](readme-assets/iphone-thankyou.PNG) | ![screenshot](readme-assets/iphone-404.PNG) | Work as expected | 
 | Tablet (DevTools) |![screenshot](readme-assets/tablet-home.png) | ![screenshot](readme-assets/tablet-adopt.png) | ![screenshot](readme-assets/tablet-contact.png) | ![screenshot](readme-assets/tablet-success.png) | ![screenshot](readme-assets/tablet-thankyou.png) | ![screenshot](readme-assets/tablet-404.png) | Work as expected | 
-| 13.6 inch MacBook Air M2  |![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png) | ![screenshot](readme-assets/chrome-thankyou.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
-| Laptop L (Devtools) | ![screenshot](readme-assets/laptop-l-home.png) | ![screenshot](readme-assets/laptop-l-adopt.png)| ![screenshot](readme-assets/laptop-l-contact.png) | ![screenshot](readme-assets/laptop-l-success.png) | ![screenshot](readme-assets/laptop-l-thankyou.png) | ![screenshot](readme-assets/laptop-l-404.png) | Work as expected | 
+| 13.6 inch MacBook Air M2  |![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
+| Desktop L (Devtools) | ![screenshot](readme-assets/desktop-start.png) | ![screenshot](readme-assets/desktop-diff.png)| ![screenshot](readme-assets/desktop-game.png) | ![screenshot](readme-assets/desktop-modal.png) | ![screenshot](readme-assets/desktop-404.png) |  Work as expected | 
 
 ### Testing Client Goals
+| Moscow Prioritization | Goal | Status |
+| --- | ----------- | --- |
+| **Must Have** | A responsive website that looks and functions well on all screensizes | **Done**|
+| **Must Have** | JavaScript for interactivity | **Done** |
+| **Must Have** | Clean, focused design | **Done** |
+| **Must Have** | Search Engine Optimization (SEO). | **Done** |
+| **Must Have** | A list showing wrong letter| **Done** |
+| **Must Have** | Possibility to restart game | **Done** |
+| **Should Have** | A modal with feedback | **Done** |
+| **Should Have** | Different difficulty levels | **Done** |
+| **Should Have** | Random, shuffeled words | **Done** |
+| **Could Have** | A personal greeting | **Done** |
 
 ### Testing Feautures
+| Page | Feature | Expected Outcome | Action | Pass / Fail |
+| ----------- | ----------- | ----------- | ----------- | ----------- | 
+| Start | **Input field** | When clicked, input works | Clicked the field, wrote name | Pass | 
+| Start | **Continue button** | When clicked, the page will return to difficulty page | Clicked the button | Pass | 
+| Difficulty | **Personal Greeting** | The name input from previous page shows | Looked at it | Pass |
+| Difficulty | **Difficulty buttons** | When clicked, the respective button will turn active | Clicked the buttons | Pass |
+| Difficulty | **Start game button** | When clicked, the page will return to game page | Clicked the button | Pass |
+| Game | **Letterbox** | When pressing key, the key shows in letterbox | Pressed key | Pass |
+| Game | **Letterbox** | When clicked, input works | Clicked the field, wrote letter | Pass |
+| Game | **Hints** | A hint that matches the word shows | Compared hint and word | Pass |
+| Game | **Wrong letters** | When wrong letter is written it shows under wrong letters | Wrote wrong letter | Pass |
+| Game | **Guesses lefts** | When wrong letter is written, guesses decreases by one | Wrote wrong letter| Pass |
+| Game | **Score** | When right letter is written, score will increment | Wrote the right word | Pass |
+| Game | **Right word** | When right word is written, letters will turn green | Wrote the right word | Pass |
+| Game | **Right word** | When right word is written, a new word and hint will show | Wrote the right word | Pass |
+| Game | **Wrong word** | When wrong word is written and guesses reach 0, letters will turn red and the right word shows | Wrote the wrong word | Pass |
+| Modal | **Game over** | When wrong word is written and guesses reach 0, a modal pops up | Wrote the wrong word | Pass |
+| Modal | **X button** | When clicked, the modal will close | Clicked the X | Pass |
+| Modal | **Play again button** | When clicked, the score and guesses left will reset and a new word show | Clicked the button | Pass |
+| 404 | **Return to homepage** | When clicked, home page will open | Clicked button | Pass |
+| All | **Hovers** | When hover, all buttons  will have a hover effect to show that they are focused | Hovered the buttons | Pass |
 
 ### Bugs
 
