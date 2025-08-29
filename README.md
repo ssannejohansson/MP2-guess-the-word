@@ -191,8 +191,24 @@ I used [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](ht
 <img src="readme-assets/JSHint.png">
 
 ### Lighthouse
+I used the Chrome Developer Tool Lighthouse to test performance, accessibility, best practices and SEO of the website. I run the test for both desktop and mobile. 
+
+**Desktop**
+<img src="readme-assets/lighthouse-desktop.png">
+
+**Mobile** 
+<img src="readme-assets/lighthouse-mobile.png">
+Orange performance on mobile are explained by the usage of Bootstrap framework and jQuery library. 
 
 ### Browser Compatibility
+
+| Browser | Start Page | Difficulty Page | Game page | Modal | 404 | Notes |
+| -------- | ------- | -------- | ------- | -------- | ------- | -------- | -------- |  
+| Chrome | ![screenshot](readme-assets/chrome-home.png) | ![screenshot](readme-assets/chrome-adopt.png)| ![screenshot](readme-assets/chrome-contact.png) | ![screenshot](readme-assets/chrome-success.png) | ![screenshot](readme-assets/chrome-thankyou.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
+| Firefox | ![screenshot](readme-assets/firefox-home.png) | ![screenshot](readme-assets/firefox-adopt.png) | ![screenshot](readme-assets/firefox-contact.png) | ![screenshot](readme-assets/firefox-success.png) | ![screenshot](readme-assets/firefox-thankyou.png) | ![screenshot](readme-assets/firefox-404.png) | Heart-shaped image on thank you page does not look as it should. | 
+| Edge | ![screenshot](readme-assets/edge-home.png) | ![screenshot](readme-assets/edge-adopt.png) | ![screenshot](readme-assets/edge-contact.png) | ![screenshot](readme-assets/edge-success.png) | ![screenshot](readme-assets/edge-thankyou.png) | ![screenshot](readme-assets/edge-404.png) | Work as expected | 
+| Safari | ![screenshot](readme-assets/safari-home.png) | ![screenshot](readme-assets/safari-adopt.png) | ![screenshot](readme-assets/safari-contact.png) | ![screenshot](readme-assets/safari-success.png) | ![screenshot](readme-assets/safari-thankyou.png) | ![screenshot](readme-assets/safari-404.png) | Work as expected | 
+
 
 ### Responsiveness
 

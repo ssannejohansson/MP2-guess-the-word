@@ -310,4 +310,25 @@ select:focus { /* Remove browsers default outline and border */
                 flex-direction: column;
         width: 33%;
     }
+
+    /* Game info */ 
+    #game-info {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Letterbox container */ 
+    #letter-container {
+        margin-top: 10px;
+        margin-bottom: 340px;
+    }
+
+       /* Letterbox */
+    #letter {
+        margin: 10px;
+        height: 70px;
+        width: 70px;
+        font-size: 34px;
+        line-height: 70px;;
+    }
 }
