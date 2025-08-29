@@ -263,10 +263,14 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 
 | Bug | How I solved it |
 | ----------- | ----------- |
-|  |  |
-|  |  | 
-| | | 
-|
+| It didn't work to filter the wordList array to get different difficulty levels based on word length | Instead of filtering, I created separate arrays for each difficulty level and pushed the specific array into the wordList array | 
+| Score count got resetted with each new word | Since I had the score variable set to 0 inside of the random word function, it got resetted to 0 because the function was called every time a correct word was found | 
+| The letter "W" got cut off in letterbox on mobile | Set padding to 0 to remove the default input padding that cut the letter off.| 
+| Words got repeated before the whole wordlist was used up | I tried at least 15 different solutions but none of them worked with the rest of my code, so I took to chatGPT for help with my specific code. The solution, that actually worked (yay!) was to shuffle the wordList array and assign each item a random number, and then sort the array by number, and then return a new array with the random, sorted, words. When the whole list is used, it restarts. 
+
+
+
+
 
 
 ## Credits
