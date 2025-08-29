@@ -144,7 +144,8 @@ select:focus { /* Remove browsers default outline and border */
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 28px;
+    font-size: 22px;
+    line-height: 40px;
     text-transform: uppercase;
 }
 
@@ -235,6 +236,8 @@ select:focus { /* Remove browsers default outline and border */
     #letter {
         height: 50px;
         width: 50px;
+            font-size: 28px;
+    line-height: 50px;
     }
 
     /* Modal */
