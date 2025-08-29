@@ -79,25 +79,33 @@ let instructions =
   "</div>";
 
 
+/**
+ * Stores the users name input from previous page in a variable to show it in the greeting on this page.
+ * Removes HTML elements from previous page and adds new ones for this page.
+ * Starts game when clicking start game button.
+ */
 function diffPage(e) {
-  const nameInput = document.getElementById("user-input").value; // Store users input in a variable
+  const nameInput = document.getElementById("user-input").value; 
   $("#heading-small").remove();
-  $("#heading").removeClass("mb-4").addClass("mb-2"); //
-  $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize"); // Shows name from input, set text-transform CSS to capitalize
-  $("#input-container").children().remove(); //
-  $("#input-container").append(selectDifficulty).append(instructions); // 
+  $("#heading").removeClass("mb-4").addClass("mb-2"); 
+  $("#heading").text(`Hello ${nameInput}!`).css("text-transform", "capitalize"); 
+  $("#input-container").children().remove(); 
+  $("#input-container").append(selectDifficulty).append(instructions); 
   changeDiff(); 
-  $("#start-btn").on("click", game); // Starts game when clicking start game button
+  $("#start-btn").on("click", game); 
 }
 
 // Function to choose difficulty
-function changeDiff(difficulty) { // Connects button onclicks from HTML with the right difficulty level. 
-                                  // e.g. onclick="changeDiff(1)" connects to (difficulty === 1) below.
+/**
+ * Connects button onclicks from HTML with the right difficulty level.
+ * eg. onclick="changeDiff(1)" connects to (difficulty === 1) below. 
+ * Pushes the selected difficultys array of words into wordList array.
+ */
+function changeDiff(difficulty) { 
   if (difficulty === 1) {
-    $("#easy").on("click").toggleClass("active-btn"); // 
+    $("#easy").on("click").toggleClass("active-btn"); 
     $("#medium, #hard").on("click").removeClass("active-btn"); // Makes sure only one btn can be active at once
-    wordList.push(...easyWords); // Pushes easyWords array into wordList array
-  } else if (difficulty === 2) {
+    wordList.push(...easyWords); 
     $("#medium").on("click").toggleClass("active-btn");
     $("#easy, #hard").on("click").removeClass("active-btn");
     wordList.push(...mediumWords);
@@ -138,8 +146,12 @@ let resetBtn =
   '<button type="button" class="btn custom-btn mt-2" id="reset-btn">Reset Game</button>';
 
 // Game interface
-function game() { // Game function
-  randomWord(); // Function to add a random word
+/**
+ * Game function with function to add a random word. 
+ * When reset button is clicked, page refreshes to show the first page.
+ */
+function game() { 
+  randomWord();
   $("#heading").text("Good luck!").addClass("mb-4");
   $("#input-container").children().remove();
   $("#letter-container").removeClass("d-none");
@@ -148,7 +160,7 @@ function game() { // Game function
   $("#hint").text(hints);
   $("#rem-guess").text(maxGuess);
   $("#score").text(score);
-  $("#reset-btn").click(function () { // Returns to first page
+  $("#reset-btn").click(function () {
     location.reload();
   });
 }
@@ -157,7 +169,10 @@ function game() { // Game function
 let shuffledWordList = shuffleArray(wordList); // Shuffles the wordList array when calling the function below and stores it in shuffledWordList
 let currentWordIndex = 0; // Sets the starting index for the current word to 0
 
-function shuffleArray(arr) { // Function to shuffle the array using the Fisher-Yates-like method with random sorting
+/**
+ * Shuffles the array using the Fisher-Yates-like method with random sorting.
+ */
+function shuffleArray(arr) { 
   return arr
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
@@ -166,29 +181,35 @@ function shuffleArray(arr) { // Function to shuffle the array using the Fisher-Y
 
 score = 0; // Starting score
 
+
+/**
+ * Checks if the end of shuffled wordlist is reached. 
+ * If so, reshuffle wordList and reset the index to start from the beginning of the newly shuffled list. 
+ * Gets the next object and increment the index.
+ */
 function randomWord() { 
-  if (currentWordIndex >= shuffledWordList.length) { // Check if the end of shuffled word list is reached
-    shuffledWordList = shuffleArray(wordList); // If so, reshuffle wordlist
-    currentWordIndex = 0; // Reset the index to start from the beginning of the new shuffled list
+  if (currentWordIndex >= shuffledWordList.length) { 
+    shuffledWordList = shuffleArray(wordList);
+    currentWordIndex = 0; 
   }
 
-  let randomObject = shuffledWordList[currentWordIndex++]; // Get the next object and increment the index for the next time
+  let randomObject = shuffledWordList[currentWordIndex++]; 
   word = randomObject.word; 
   hints = randomObject.hint; 
   maxGuess = 5; // Max amount of guesses
   corrects = []; // Array of correct letters
   incorrects = []; // Array of incorrect letters
 
-  console.log(word);
-
+  // Shows the values above in game interface
   $("#hint").text(hints);
   $("#rem-guess").text(maxGuess);
   $("#wrong-letters").text(incorrects);
   $("#score").text(score);
 
+  // Creates letter boxes due to word length
   let html = "";
-  for (let i = 0; i < word.length; i++) { // Creates letter boxes due to word length
-    html += `<input type="text" id="letter">`;
+  for (let i = 0; i < word.length; i++) { 
+    html += `<input type="text" id="letter" aria-label="letter-box">`;
   }
 
   const inputs = document.querySelector("#letter-container"); 
@@ -197,11 +218,16 @@ function randomWord() {
 
 // Game initialization and game functionality
 $("#letter").on("input", initGame); // Initialize game when you input a letter
-const typingInput = document.querySelector("#typing-input");
+const typingInput = document.querySelector("#typing-input"); // Variable for functionality to initialize game when you input a letter to letterbox on mobile/tablet
 
+
+/**
+ * Initializes game. 
+ * If key (letter) matches uppercase or lowercase letters and are found in the word, matched letter shows in the letterbox.
+ * If not, decrement amout of guesses and show the key under wrong letters.
+ */
 function initGame(e) { 
   let key = e.target.value.toLowerCase(); 
-  // If key (letter) matches uppercase or lowercase letters and are found in the word from wordList, show matched letter in the letterbox. 
   if (
     key.match(/^[A-Za-z]+$/) && 
     !incorrects.includes(` ${key}`) &&
@@ -215,7 +241,7 @@ function initGame(e) {
           document.querySelectorAll("input")[i].value = key;
         }
       }
-    } else { // If the key does not match any letters of the word, decrement amout of guesses and show the key under wrong letters.
+    } else { 
       maxGuess--;
       incorrects.push(` ${key}`);
     }
@@ -226,25 +252,20 @@ function initGame(e) {
 
   typingInput.value = ""; // Empty input-field after typing a letter
 
+let correctWord = document.querySelectorAll("#letter"); // All letters in a correct word
 
-  // Modal 
-  let modal = document.getElementById("myModal");
-
-
-  function closeModal() {
-    $(modal).addClass("d-none");
-  }
-
-let correctWord = document.querySelectorAll("#letter");
-
+/** 
+ * If user found all correct letters, score is incremented and word is shown in green before a new word initiates. 
+ * If amount of guesses is less than 1, correct word is shown in red before a modal pops up. 
+ * When clicking start over button, game starts over and score resets. 
+ */
   setTimeout(() => {
- 
     if (corrects.length === word.length) {
       // If user found all letters
-      score++;
-      $("#score").text(score);
-      $(correctWord).css("color", "#56b856");
-      setTimeout(randomWord, 600); // The game starts over efter 1000ms
+      let updatedScore = score++;
+      $("#score").text(updatedScore);  
+      $(correctWord).css("color", "#6ac56aff");
+      setTimeout(randomWord, 600); 
     } else if (maxGuess < 1) {
       // If amount of guesses is less than 1
       setTimeout(function () {
@@ -265,5 +286,17 @@ let correctWord = document.querySelectorAll("#letter");
   });
 }
 
-$(typingInput).on("input", initGame);
-document.addEventListener("keydown", () => typingInput.focus());
+$(typingInput).on("input", initGame); // Initiates game when you put a letter in the letterbox on mobile/tablet
+document.addEventListener("keydown", () => typingInput.focus()); // Initates game when you press a key on desktop
+
+// Modal 
+let modal = document.getElementById("myModal");
+
+/**
+ * Adds class "d-none" to hide modal.
+ */
+function closeModal() {
+    $(modal).addClass("d-none");
+  }
+
+  
