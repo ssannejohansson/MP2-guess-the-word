@@ -261,8 +261,16 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 
 #### Solved bugs
 
-## Credits
+| Bug | How I solved it |
+| ----------- | ----------- |
+|  |  |
+|  |  | 
+| | | 
+|
 
+
+## Credits
+  
 ### Code Used
 [CSS Generator Tool](https://cssgenerator.org/) - For generating box-shadow.
 
