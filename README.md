@@ -215,7 +215,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | Device | Start Page | Difficulty Page | Game Page | Modal | 404 | Notes |
 | -------- | ------- | -------- | ------- | -------- | -------- | -------- | 
 | Mobile (DevTools) | ![screenshot](readme-assets/mobile-start.png) | ![screenshot](readme-assets/mobile-diff.png) | ![screenshot](readme-assets/mobile-game.png) | ![screenshot](readme-assets/mobile-modal.png) | ![screenshot](readme-assets/mobile-404.png) | Work as expected | 
-| Iphone 16 Pro Max |![screenshot](readme-assets/iphone-home.PNG) | ![screenshot](readme-assets/iphone-adopt.PNG)| ![screenshot](readme-assets/iphone-contact.PNG) | ![screenshot](readme-assets/iphone-success.PNG) | ![screenshot](readme-assets/iphone-thankyou.PNG) | ![screenshot](readme-assets/iphone-404.PNG) | Work as expected | 
+| Iphone 16 Pro Max |![screenshot](readme-assets/iphone-start.PNG) | ![screenshot](readme-assets/iphone-diff.PNG)| ![screenshot](readme-assets/iphone-game.PNG) | ![screenshot](readme-assets/iphone-modal.PNG) | ![screenshot](readme-assets/iphone-404.PNG) | Work as expected | 
 | Tablet (DevTools) |![screenshot](readme-assets/tablet-home.png) | ![screenshot](readme-assets/tablet-adopt.png) | ![screenshot](readme-assets/tablet-contact.png) | ![screenshot](readme-assets/tablet-success.png) | ![screenshot](readme-assets/tablet-thankyou.png) | ![screenshot](readme-assets/tablet-404.png) | Work as expected | 
 | 13.6 inch MacBook Air M2  |![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
 | Desktop L (Devtools) | ![screenshot](readme-assets/desktop-start.png) | ![screenshot](readme-assets/desktop-diff.png)| ![screenshot](readme-assets/desktop-game.png) | ![screenshot](readme-assets/desktop-modal.png) | ![screenshot](readme-assets/desktop-404.png) |  Work as expected | 
@@ -252,6 +252,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | Game | **Right word** | When right word is written, a new word and hint will show | Wrote the right word | Pass |
 | Game | **Wrong word** | When wrong word is written and guesses reach 0, letters will turn red and the right word shows | Wrote the wrong word | Pass |
 | Modal | **Game over** | When wrong word is written and guesses reach 0, a modal pops up | Wrote the wrong word | Pass |
+| Modal | **Game over** | The right feedback shows in modal | Played the game and checked modal | Pass |
 | Modal | **X button** | When clicked, the modal will close | Clicked the X | Pass |
 | Modal | **Play again button** | When clicked, the score and guesses left will reset and a new word show | Clicked the button | Pass |
 | 404 | **Return to homepage** | When clicked, home page will open | Clicked button | Pass |
