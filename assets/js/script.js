@@ -181,8 +181,13 @@ function shuffleArray(arr) {
     .map(({ value }) => value);
 }
 
-score = 0; // Starting score
-
+// Variables
+let word;
+let hints;
+let maxGuess;
+let corrects;
+let incorrects;
+let score = 0; // Starting score
 
 /**
  * Checks if the end of shuffled wordlist is reached. 
