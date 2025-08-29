@@ -66,7 +66,7 @@ let selectDifficulty =
   '<div class="d-flex gap-2 mb-2 mt-2" id="button-container">' +
   '<button class="btn diff-btn" id="easy" onclick="changeDiff(1)">Easy</button>' +
   '<button class="btn diff-btn" id="medium" onclick="changeDiff(2)">Medium</button>' +
-  '<button class="btn diff-btn"id="hard" onclick="changeDiff(3)">Hard</button></div>' +
+  '<button class="btn diff-btn" id="hard" onclick="changeDiff(3)">Hard</button></div>' +
   "</div>";
 
 // Instructions field html
@@ -95,17 +95,19 @@ function diffPage(e) {
   $("#start-btn").on("click", game); 
 }
 
-// Function to choose difficulty
+
 /**
+ * Selection of difficulty.
  * Connects button onclicks from HTML with the right difficulty level.
- * eg. onclick="changeDiff(1)" connects to (difficulty === 1) below. 
+ * e.g. onclick="changeDiff(1)" connects to (difficulty === 1) below through "1".
  * Pushes the selected difficultys array of words into wordList array.
  */
 function changeDiff(difficulty) { 
   if (difficulty === 1) {
     $("#easy").on("click").toggleClass("active-btn"); 
-    $("#medium, #hard").on("click").removeClass("active-btn"); // Makes sure only one btn can be active at once
+    $("#medium, #hard").on("click").removeClass("active-btn"); // Makes sure only one button at the time can have the class "active"
     wordList.push(...easyWords); 
+  } else if (difficulty === 2) {
     $("#medium").on("click").toggleClass("active-btn");
     $("#easy, #hard").on("click").removeClass("active-btn");
     wordList.push(...mediumWords);
@@ -233,7 +235,6 @@ function initGame(e) {
     !incorrects.includes(` ${key}`) &&
     !corrects.includes(key)
   ) {
-    console.log(key);
     if (word.includes(key)) {
       for (let i = 0; i < word.length; i++) {
         if (word[i] === key) {
@@ -286,9 +287,6 @@ let correctWord = document.querySelectorAll("#letter"); // All letters in a corr
   });
 }
 
-$(typingInput).on("input", initGame); // Initiates game when you put a letter in the letterbox on mobile/tablet
-document.addEventListener("keydown", () => typingInput.focus()); // Initates game when you press a key on desktop
-
 // Modal 
 let modal = document.getElementById("myModal");
 
@@ -299,4 +297,5 @@ function closeModal() {
     $(modal).addClass("d-none");
   }
 
-  
+$(typingInput).on("input", initGame); // Initiates game when you put a letter in the letterbox on mobile/tablet
+document.addEventListener("keydown", () => typingInput.focus()); // Initates game when you press a key on desktop
