@@ -181,13 +181,14 @@ To clone the repository, log in your GitHub accout, go to the repository of the 
 
 ### W3C Validator and JSHint
 I used [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) and [JS Hint](https://jshint.com/) to validate the HTML, CSS and JavaScript. 
-- **HTML** - No errors. 
+- **HTML** - No errors. <br>
 <img src="readme-assets/w3c-html.png">
 
-- **CSS** - No errors. Warnings about variables and about vendor extensions coming from autoprefixes when I run the code through [Autoprefixer](https://autoprefixer.github.io/).
+- **CSS** - No errors. Warnings about variables and about vendor extensions coming from autoprefixes when I run the code through [Autoprefixer](https://autoprefixer.github.io/). <br>
 <img src="readme-assets/w3c-css.png">
 
-- **JavaScript** - 
+- **JavaScript** - No errors. One unused variable, this is because diffPage is called on click at index.html and not in script.js. <br>
+<img src="readme-assets/JSHint.png">
 
 ### Lighthouse
 

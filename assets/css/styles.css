@@ -232,14 +232,6 @@ select:focus { /* Remove browsers default outline and border */
 /* Media queries */
 /* Media query: Large phones (420px and up) */
 @media screen and (min-width: 420px) {
-    /* Letterbox */
-    #letter {
-        height: 50px;
-        width: 50px;
-            font-size: 28px;
-    line-height: 50px;
-    }
-
     /* Modal */
     #modal-content {
         min-height: 300px;
@@ -284,7 +276,15 @@ select:focus { /* Remove browsers default outline and border */
         font-size: 1rem;
         padding: 0px 20px;
     }
-}
+
+    /* Letterbox */
+    #letter {
+        height: 50px;
+        width: 50px;
+        font-size: 28px;
+        line-height: 50px;
+    }
+    }
 
 
 /* Media query: laptop and larger (992px and up) */
