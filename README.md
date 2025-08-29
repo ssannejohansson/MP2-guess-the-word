@@ -32,7 +32,7 @@ Link to deployed site: [Guess the Word](https://ssannejohansson.github.io/MP2-gu
 #### Frequent visitor goals
 - I want to see if I can beat my last score
 
-#### Client Goals and Moscow Prioritization
+### Client Goals and Moscow Prioritization
 
 #### Must Have
 - A responsive website that looks and functions well on all screensizes 
