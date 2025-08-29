@@ -184,10 +184,11 @@ function shuffleArray(arr) {
 // Variables
 let word;
 let hints;
-let maxGuess;
+let maxGuess = 5; // Max amount of guesses
 let corrects;
 let incorrects;
 let score = 0; // Starting score
+
 
 /**
  * Checks if the end of shuffled wordlist is reached. 
@@ -203,7 +204,6 @@ function randomWord() {
   let randomObject = shuffledWordList[currentWordIndex++]; 
   word = randomObject.word; 
   hints = randomObject.hint; 
-  maxGuess = 5; // Max amount of guesses
   corrects = []; // Array of correct letters
   incorrects = []; // Array of incorrect letters
 
