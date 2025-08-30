@@ -1,7 +1,6 @@
 # Guess the Word
 
-<img src="readme-assets/amiresponsive.png
-"> 
+<img src="readme-assets/amiresponsive.png"> 
 
 Guess the Word is my second Milestone Project created for Code Institute Level 5 Diploma in Web Application Development. 
 
