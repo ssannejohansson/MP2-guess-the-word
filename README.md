@@ -216,7 +216,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | -------- | ------- | -------- | ------- | -------- | -------- | -------- | 
 | Mobile (DevTools) | ![screenshot](readme-assets/mobile-start.png) | ![screenshot](readme-assets/mobile-diff.png) | ![screenshot](readme-assets/mobile-game.png) | ![screenshot](readme-assets/mobile-modal.png) | ![screenshot](readme-assets/mobile-404.png) | Work as expected | 
 | Iphone 16 Pro Max |![screenshot](readme-assets/iphone-start.PNG) | ![screenshot](readme-assets/iphone-diff.PNG)| ![screenshot](readme-assets/iphone-game.PNG) | ![screenshot](readme-assets/iphone-modal.PNG) | ![screenshot](readme-assets/iphone-404.PNG) | Work as expected | 
-| Tablet (DevTools) |![screenshot](readme-assets/tablet-home.png) | ![screenshot](readme-assets/tablet-adopt.png) | ![screenshot](readme-assets/tablet-contact.png) | ![screenshot](readme-assets/tablet-success.png) | ![screenshot](readme-assets/tablet-thankyou.png) | ![screenshot](readme-assets/tablet-404.png) | Work as expected | 
+| Tablet (DevTools) |![screenshot](readme-assets/tablet-start.png) | ![screenshot](readme-assets/tablet-diff.png) | ![screenshot](readme-assets/tablet-game.png) | ![screenshot](readme-assets/tablet-modal.png) | ![screenshot](readme-assets/tablet-404.png) | Work as expected | 
 | 13.6 inch MacBook Air M2  |![screenshot](readme-assets/chrome-start.png) | ![screenshot](readme-assets/chrome-diff.png)| ![screenshot](readme-assets/chrome-game.png) | ![screenshot](readme-assets/chrome-modal.png) | ![screenshot](readme-assets/chrome-404.png) | Work as expected | 
 | Desktop L (Devtools) | ![screenshot](readme-assets/desktop-start.png) | ![screenshot](readme-assets/desktop-diff.png)| ![screenshot](readme-assets/desktop-game.png) | ![screenshot](readme-assets/desktop-modal.png) | ![screenshot](readme-assets/desktop-404.png) |  Work as expected | 
 
@@ -258,6 +258,8 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | 404 | **Return to homepage** | When clicked, home page will open | Clicked button | Pass |
 | All | **Hovers** | When hover, all buttons  will have a hover effect to show that they are focused | Hovered the buttons | Pass |
 
+ *Note: Additional testing was done using a Android phone since I only have iOS devices. Everything worked as expected and passed the testing*
+
 ### Bugs
 
 #### Solved bugs
@@ -267,7 +269,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | It didn't work to filter the wordList array to get different difficulty levels based on word length | Instead of filtering, I created separate arrays for each difficulty level and pushed the specific array into the wordList array | 
 | Score count got resetted with each new word | Since I had the score variable set to 0 inside of the random word function, it got resetted to 0 because the function was called every time a correct word was found | 
 | The letter "W" got cut off in letterbox on mobile | Set padding to 0 to remove the default input padding that cut the letter off.| 
-| Words got repeated before the whole wordlist was used up | I tried at least 15 different solutions but none of them worked with the rest of my code, so I took to chatGPT for help with my specific code. The solution, that actually worked (yay!) was to shuffle the wordList array and assign each item a random number, and then sort the array by number, and then return a new array with the random, sorted, words. When the whole list is used, it restarts. 
+| Words got repeated before the whole wordlist was used up | I tried at least 15 different solutions but none of them worked with the rest of my code. The final solution that actually worked was to shuffle the wordList array and assign each item a random number, and then sort the array by number, and then return a new array with the random, sorted, words. When the whole list is used, it restarts. 
 
 
 
