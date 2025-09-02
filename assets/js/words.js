@@ -1,0 +1,55 @@
+/* jshint esversion: 11, jquery: true */
+
+const easyWords = [
+  {word: "apple", hint: "A fruit that keeps the doctor away"},
+  {word: "pizza", hint: "A cheesy favourite from Italy"},
+  {word: "beach", hint: "A sandy spot by the ocean"},
+  {word: "sheep", hint: "A woolly animal that goes 'baa'"},
+  {word: "cloud", hint: "A fluffy thing in the sky or used in tech"},
+  {word: "ghost", hint: "Something spooky and white"},
+  {word: "light", hint: "The opposite of dark"},
+  {word: "blush", hint: "Something you can put on your cheeks"},
+  {word: "spice", hint: "Something used in cooking to add flavor"},
+  {word: "brick", hint: "A block used to build houses"},
+  {word: "whale", hint: "The largest animal in the ocean"},
+  {word: "lemon", hint: "A sour yellow fruit"},
+  {word: "mouth", hint: "You use it to talk"},
+  {word: "dough", hint: "Something u use to bake bread and cookies"},
+  {word: "thorn", hint: "A sharp part of a rose stem"},
+];
+
+const mediumWords = [
+  {word: "elephant", hint: "The largest land animal"},
+  {word: "computer",hint: "A machine used for work or games"},
+  {word: "backpack", hint: "Something you carry on your back"},
+  {word: "airplane", hint: "Something that carries passengers in the sky"},
+  {word: "umbrella", hint: "Something that protects you from rain"},
+  {word: "fireworks", hint: "A loud and colorful show in the sky"},
+  {word: "journey", hint: "A long trip from one place to another"},
+  {word: "octopus", hint: "A sea creature with eight arms"},
+  {word: "whisper", hint: "To speak softly"},
+  {word: "diamond", hint: "A precious stone"},
+  {word: "notebook", hint: "Something used to write notes or ideas by hand"},
+  {word: "sunshine", hint: "Light and warmth from the sun"},
+  {word: "sandwich", hint: "Food made by placing filling between bread"},
+  {word: "skeleton", hint: "The framework of bones inside of a body"},
+  {word: "monster", hint: "A scary creature"},
+];
+
+const hardWords = [
+  {word: "brainstorming", hint: "A creative idea generation process"},
+  {word: "relationship", hint: "A connection between people"},
+  {word: "investigation", hint: "A careful search or examination"},
+  {word: "journalist", hint: "Someone who reports the news for TV, newspaper or websites"},
+  {word: "wilderness", hint: "Untamed nature, often far from cities"},
+  {word: "lighthouse", hint: "A tall structure with beacon to guide ships"},
+  {word: "smartphone", hint: "A device that lets you scroll all day"},
+  {word: "celebration", hint: "A joyful event"},
+  {word: "conversation", hint: "A talk between two or more people"},
+  {word: "volunteering", hint: "Helping others without getting paid"},
+  {word: "superhero", hint: "Fictional character with amazing powers"},
+  {word: "photographer", hint: "A person who takes pictures"},
+  {word: "daydreaming", hint: "Letting your mind wander while awake"},
+  {word: "houseplant", hint: "Green, living things people keep indoors"},
+  {word: "thunderstorm", hint: "A storm with lightning and thunder"},
+];
