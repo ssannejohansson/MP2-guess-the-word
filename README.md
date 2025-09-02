@@ -269,11 +269,13 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 
 | Bug | How I solved it |
 | ----------- | ----------- |
+| The required attribute on name input was bypassed and made it possible to continue without entering a name| Added form action="" and changed button type from button to "submit". | 
 | It didn't work to filter the wordList array to get different difficulty levels based on word length | Instead of filtering, I created separate arrays for each difficulty level and pushed the specific array into the wordList array | 
-| Score count got resetted with each new word | Since I had the score variable set to 0 inside of the random word function, it got resetted to 0 because the function was called every time a correct word was found | 
-| The letter "W" got cut off in letterbox on mobile | Set padding to 0 to remove the default input padding that cut the letter off.| 
+| Score count got reset with each new word | Since I had the score variable set to 0 inside of the random word function, it got reset to 0 because the function was called every time a correct word was found | 
+| The letter "W" got cut off in letterbox on mobile | Set padding to 0 to remove the default input padding that cut the letter off | 
 | Words got repeated before the whole wordlist was used up | I tried at least 15 different solutions but none of them worked with the rest of my code. The final solution that actually worked was to shuffle the wordList array and assign each item a random number, and then sort the array by number, and then return a new array with the random, sorted, words. When the whole list is used, it restarts. 
-
+| Uncaught TypeError in console when you don't select a difficulty before you click Start Game button | Made button disabled before selecting a difficulty. When selecting difficulty, JavaScript removes disabled attribute | 
+| Inspection tool showed error with letterboxes since they all got the same id due to duplication in JavaScript. | Changed from id="letter" to class="letter" for CSS targeting. Added name="letter". Changed id="letter" to id="letter-${i}" to make the id dynamically change the name when it gets duplicated in JavaScript. | 
 
 
 
