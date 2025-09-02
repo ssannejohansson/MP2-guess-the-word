@@ -135,7 +135,7 @@ select:focus { /* Remove browsers default outline and border */
 /* Name input */
 #user-input {
     height: 2.5rem;
-    width: 100%;
+    width: 90%;
     background-color: var(--input-color);
     border: none;
     border-radius: 16px;
