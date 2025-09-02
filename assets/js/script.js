@@ -15,7 +15,7 @@ $("#input-form").submit(diffPage);
 // Select difficulty field html
 let selectDifficulty =
   '<div class="d-flex flex-column justify-content-center align-items-center p-2">' +
-  '<p class="mb-0">Choose your difficulty</p>' +
+  '<p class="mb-0">Select your difficulty</p>' +
   '<div class="d-flex gap-2 mb-2 mt-2" id="button-container">' +
   '<button class="btn diff-btn" id="easy" onclick="changeDiff(1)">Easy</button>' +
   '<button class="btn diff-btn" id="medium" onclick="changeDiff(2)">Medium</button>' +
@@ -24,11 +24,13 @@ let selectDifficulty =
 
 // Instructions field html
 let instructions =
-  '<div class="d-flex flex-column justify-content-center align-items-center p-2 mt-3 mb-3 text-center">' +
-  "<p>Click the button below to generate a random word.</p>" +
-  "<p>Use your keyboard to guess a letter.</p>" +
-  "<p>When your guess is correct the letter will automatically will be inserted to the word.</p>" +
-  '<button type="button" class="btn custom-btn mt-3" id="start-btn">Start Game</button>' +
+  '<div class="d-flex flex-column justify-content-center align-items-center ps-5 pe-5 mt-3 mb-3 text-center">' +
+  '<p>Click Start Game to generate a random word.</p>' +
+  '<p>Use your keyboard to guess a letter.</p>' +
+  '<p>When your guess is correct the letter will automatically will be inserted to the word.</p>' +
+  '<p>When your guess is incorrect your number of guesses left will decrease.</p>' +
+  '<p>Game is over when you run out of guesses.</p>' +
+  '<button type="button" class="btn custom-btn mt-3" id="start-btn" disabled>Start Game</button>' +
   "</div>";
 
 
@@ -53,20 +55,23 @@ function diffPage(e) {
  * Selection of difficulty.
  * Connects button onclicks from HTML with the right difficulty level.
  * e.g. onclick="changeDiff(1)" connects to (difficulty === 1) below through "1".
- * Pushes the selected difficultys array of words into wordList array.
+ * Pushes the selected difficulty's array of words into wordList array.
  */
 function changeDiff(difficulty) { 
   if (difficulty === 1) {
     $("#easy").on("click").toggleClass("active-btn"); 
     $("#medium, #hard").on("click").removeClass("active-btn"); // Makes sure only one button at the time can have the class "active"
+    $("#start-btn").removeAttr("disabled");
     wordList.push(...easyWords); 
   } else if (difficulty === 2) {
     $("#medium").on("click").toggleClass("active-btn");
     $("#easy, #hard").on("click").removeClass("active-btn");
+    $("#start-btn").removeAttr("disabled");
     wordList.push(...mediumWords);
   } else if (difficulty === 3) {
     $("#hard").on("click").toggleClass("active-btn");
     $("#medium, #easy").on("click").removeClass("active-btn");
+    $("#start-btn").removeAttr("disabled");
     wordList.push(...hardWords);
   }
 }

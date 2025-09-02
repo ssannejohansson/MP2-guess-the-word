@@ -193,7 +193,7 @@ select:focus { /* Remove browsers default outline and border */
     background-color: rgba(206, 229, 230, 0.384);
 }
 
-/* Modal Contentbox */
+/* Modal Content box */
 #modal-content {
     margin-top: 50px;
     background-color: #fefefe;
