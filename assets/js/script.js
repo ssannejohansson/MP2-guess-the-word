@@ -3,6 +3,11 @@
 
 let wordList = [];
 
+// Start page (page 1)
+
+
+$("#input-form").submit(diffPage);
+
 
 // Difficulty page (page 2)
 // Initiates after clicking continue on initial screen (page 1)
@@ -22,7 +27,7 @@ let instructions =
   '<div class="d-flex flex-column justify-content-center align-items-center p-2 mt-3 mb-3 text-center">' +
   "<p>Click the button below to generate a random word.</p>" +
   "<p>Use your keyboard to guess a letter.</p>" +
-  "<p>When your guess is correct the letter will automaticlly will be inserted to the word.</p>" +
+  "<p>When your guess is correct the letter will automatically will be inserted to the word.</p>" +
   '<button type="button" class="btn custom-btn mt-3" id="start-btn">Start Game</button>' +
   "</div>";
 

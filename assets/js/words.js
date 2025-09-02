@@ -2,7 +2,7 @@
 
 const easyWords = [
   {word: "apple", hint: "A fruit that keeps the doctor away"},
-  {word: "pizza", hint: "A cheesy favourite from Italy"},
+  {word: "pizza", hint: "A cheesy favorite from Italy"},
   {word: "beach", hint: "A sandy spot by the ocean"},
   {word: "sheep", hint: "A woolly animal that goes 'baa'"},
   {word: "cloud", hint: "A fluffy thing in the sky or used in tech"},
