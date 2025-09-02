@@ -149,7 +149,7 @@ let score = 0; // Starting score
 
 
 /**
- * Checks if the end of shuffled wordlist is reached. 
+ * Checks if the end of shuffled word list is reached. 
  * If so, reshuffle wordList and reset the index to start from the beginning of the newly shuffled list. 
  * Gets the next object and increment the index.
  */
@@ -174,7 +174,7 @@ function randomWord() {
   // Creates letter boxes due to word length
   let html = "";
   for (let i = 0; i < word.length; i++) { 
-    html += `<input type="text" id="letter" aria-label="letter-box">`;
+    html += `<input type="text" class="letter" name="letter" id="letter-${i}" aria-label="letter-box">`;
   }
 
   const inputs = document.querySelector("#letter-container"); 
@@ -182,7 +182,7 @@ function randomWord() {
 }
 
 // Game initialization and game functionality
-$("#letter").on("input", initGame); // Initialize game when you input a letter
+$(".letter").on("input", initGame); // Initialize game when you input a letter
 const typingInput = document.querySelector("#typing-input"); // Variable for functionality to initialize game when you input a letter to letterbox on mobile/tablet
 
 
@@ -216,7 +216,7 @@ function initGame(e) {
 
   typingInput.value = ""; // Empty input-field after typing a letter
 
-let correctWord = document.querySelectorAll("#letter"); // All letters in a correct word
+let correctWord = document.querySelectorAll(".letter"); // All letters in a correct word
 
 /** 
  * If user found all correct letters, score is incremented and word is shown in green before a new word initiates. 
@@ -236,7 +236,7 @@ let correctWord = document.querySelectorAll("#letter"); // All letters in a corr
         $(modal).removeClass("d-none");
       }, 400);
       $("#correct-word").text(`The correct word was ${word.toUpperCase()}.`);
-      $("#score-count").text(`You got ${score} words right!`);
+      $("#score-count").text(`You got ${score} words right.`);
       $(".close").on("click", closeModal);
       $("#start-over").on("click", closeModal).on("click", randomWord);
       score = 0;
