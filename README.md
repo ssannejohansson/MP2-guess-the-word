@@ -187,10 +187,10 @@ I used [W3C Markup Validator](https://validator.w3.org/), [W3C CSS Validator](ht
 - **HTML** - No errors. <br>
 <img src="readme-assets/w3c-html.png">
 
-- **CSS** - No errors. Warnings about variables and about vendor extensions coming from autoprefixes when I run the code through [Autoprefixer](https://autoprefixer.github.io/). <br>
+- **CSS** - No errors. Warnings about variables and about vendor extensions coming from autoprefixer when I run the code through [Autoprefixer](https://autoprefixer.github.io/). <br>
 <img src="readme-assets/w3c-css.png">
 
-- **JavaScript** - No errors. One unused variable, this is because diffPage is called on click at index.html and not in script.js. <br>
+- **JavaScript** - No errors. Three undefined variables, this is because they are placed in word.js and not in script.js <br>
 <img src="readme-assets/JSHint.png">
 
 ### Lighthouse
