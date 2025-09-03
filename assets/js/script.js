@@ -149,7 +149,6 @@ let maxGuess = 5; // Max amount of guesses
 let corrects;
 let incorrects;
 let score = 0; // Starting score
-let highscore;
 
 /**
  * Checks if the end of shuffled word list is reached. 
@@ -239,7 +238,7 @@ function updateHighscore() {
     if (corrects.length === word.length) {
       // If user found all letters
       let updatedScore = score++;
-      localStorage.setItem("latestScore", score) // Saves the value of score in local storage
+      localStorage.setItem("latestScore", score); // Saves the value of score in local storage
       $("#score").text(updatedScore);  
       $(correctWord).css("color", "#6ac56aff");
       setTimeout(randomWord, 600); 
