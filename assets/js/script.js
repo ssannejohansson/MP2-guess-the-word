@@ -82,22 +82,22 @@ function changeDiff(difficulty) {
 
 // Game info html
 let gameInfo =
-  '<div class="container d-flex flex-column gap-2 p-2 mt-3 text-center" id="game-info">' +
-  "<h6>Hint</h6>" +
+  '<div class="container d-flex flex-column gap-2 p-2 mt-4 text-center" id="game-info">' +
+  '<h6 id="hinthead">Hint</h6>' +
   '<p id="hint"></p>' +
   '<div id="lg-dev-container">' +
   '<div class="lg-dev">' +
   "<h6>Wrong letters</h6>" +
-  '<p id="wrong-letters"></p>' +
-  "</div>" +
+  '<p id="wrong-letters"></p></div>' +
   '<div class="lg-dev">' +
   "<h6>Guesses left</h6>" +
-  '<p id="rem-guess"></p>' +
-  "</div>" +
+  '<p id="rem-guess"></p></div>' +
+  '<div class="lg-dev">' +
+  "<h6>Previous score</h6>" +
+  '<p id="highscore"></p></div>' +
   '<div class="lg-dev">' +
   "<h6>Current score</h6>" +
-  '<p id="score"></p>' +
-  "</div>" +
+  '<p id="score"></p></div>' +
   "</div>" +
   "</div>";
 
@@ -111,6 +111,8 @@ let resetBtn =
  * When reset button is clicked, page refreshes to show the first page.
  */
 function game() { 
+  let prevScore = localStorage.getItem("latestScore"); // Fetching previous score from localStorage
+
   randomWord();
   $("#heading").text("Good luck!").addClass("mb-4");
   $("#input-container").children().remove();
@@ -120,6 +122,7 @@ function game() {
   $("#hint").text(hints);
   $("#rem-guess").text(maxGuess);
   $("#score").text(score);
+  $("#highscore").text(prevScore);
   $("#reset-btn").click(function () {
     location.reload();
   });
@@ -146,7 +149,7 @@ let maxGuess = 5; // Max amount of guesses
 let corrects;
 let incorrects;
 let score = 0; // Starting score
-
+let highscore;
 
 /**
  * Checks if the end of shuffled word list is reached. 
@@ -214,9 +217,18 @@ function initGame(e) {
     $("#rem-guess").text(maxGuess);
   }
 
-  typingInput.value = ""; // Empty input-field after typing a letter
+typingInput.value = ""; // Empty input-field after typing a letter
 
 let correctWord = document.querySelectorAll(".letter"); // All letters in a correct word
+
+/**
+ * Fetches latest score from local storage and assigns it to variable "prevScore". 
+ * Updates innertext for #highscore to the value from local storage. 
+ */
+function updateHighscore() {
+      let prevScore = localStorage.getItem("latestScore");
+      $("#highscore").text(prevScore);
+}
 
 /** 
  * If user found all correct letters, score is incremented and word is shown in green before a new word initiates. 
@@ -227,6 +239,7 @@ let correctWord = document.querySelectorAll(".letter"); // All letters in a corr
     if (corrects.length === word.length) {
       // If user found all letters
       let updatedScore = score++;
+      localStorage.setItem("latestScore", score) // Saves the value of score in local storage
       $("#score").text(updatedScore);  
       $(correctWord).css("color", "#6ac56aff");
       setTimeout(randomWord, 600); 
@@ -238,7 +251,7 @@ let correctWord = document.querySelectorAll(".letter"); // All letters in a corr
       $("#correct-word").text(`The correct word was ${word.toUpperCase()}.`);
       $("#score-count").text(`You got ${score} words right.`);
       $(".close").on("click", closeModal);
-      $("#start-over").on("click", closeModal).on("click", randomWord);
+      $("#start-over").on("click", closeModal).on("click", updateHighscore).on("click", randomWord);
       score = 0;
       maxGuess = 5;
 

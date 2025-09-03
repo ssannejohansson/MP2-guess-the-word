@@ -308,7 +308,8 @@ select:focus { /* Remove browsers default outline and border */
 /* Media query: laptop and larger (992px and up) */
 @media screen and (min-width: 992px) {
     #lg-dev-container {
-        margin-top: 15px;
+        margin-top: 30px;
+        margin-bottom: 10px;
         width: 100%;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -319,6 +320,7 @@ select:focus { /* Remove browsers default outline and border */
     }
 
     .lg-dev {
+        margin: 10px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -326,13 +328,21 @@ select:focus { /* Remove browsers default outline and border */
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-        width: 33%;
+        width: 25%;
     }
 
     /* Game info */ 
     #game-info {
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    #hinthead {
+        font-size: 1.5rem;
+    }
+
+    #hint {
+        font-size: 1.2rem;
     }
 
     /* Letterbox container */ 
