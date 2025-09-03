@@ -93,7 +93,7 @@ let gameInfo =
   "<h6>Guesses left</h6>" +
   '<p id="rem-guess"></p></div>' +
   '<div class="lg-dev">' +
-  "<h6>Previous score</h6>" +
+  "<h6>Latest score</h6>" +
   '<p id="highscore"></p></div>' +
   '<div class="lg-dev">' +
   "<h6>Current score</h6>" +
