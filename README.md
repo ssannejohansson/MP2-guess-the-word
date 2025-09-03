@@ -18,6 +18,7 @@ The goal was to make a colorful yet clean design to make it simple but playful.
 - Input field for personal greeting
 - Possibility to choose from three different difficulty levels
 - Hints for every word
+- Score tracking
 - Feedback after game over
 
 
@@ -48,10 +49,11 @@ The goal was to make a colorful yet clean design to make it simple but playful.
 - A modal that communicates when the game is over
 - Different difficulty levels
 - Random, shuffeled words 
-- Score count
+- Score count 
 
 #### Could Have
 - A personal greeting
+- Storage of previous score
 
 ## Design
 
@@ -236,6 +238,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | **Should Have** | Different difficulty levels | **Done** |
 | **Should Have** | Random, shuffeled words | **Done** |
 | **Could Have** | A personal greeting | **Done** |
+| **Could Have** | Storage of previous score | **Done** |
 
 ### Testing Feautures
 | Page | Feature | Expected Outcome | Action | Pass / Fail |
@@ -257,7 +260,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | Modal | **Game over** | When wrong word is written and guesses reach 0, a modal pops up | Wrote the wrong word | Pass |
 | Modal | **Game over** | The right feedback shows in modal | Played the game and checked modal | Pass |
 | Modal | **X button** | When clicked, the modal will close | Clicked the X | Pass |
-| Modal | **Play again button** | When clicked, the score and guesses left will reset and a new word show | Clicked the button | Pass |
+| Modal | **Play again button** | When clicked, the score and guesses  will reset. Previous score will update and a new word show | Clicked the button | Pass |
 | 404 | **Return to homepage** | When clicked, home page will open | Clicked button | Pass |
 | All | **Hovers** | When hover, all buttons  will have a hover effect to show that they are focused | Hovered the buttons | Pass |
 
@@ -300,6 +303,8 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 [David Chedrick](https://dev.to/davidchedrick/creating-a-simple-timer-and-score-keeper-in-javascript-394g) - Tutorial for score-keeping.
 
 [Jeff Starr](https://wp-mix.com/jquery-reload-current-page-click/) - Guide to create function for refreshing page on click.
+
+[Geeks for Geeks](https://www.geeksforgeeks.org/javascript/javascript-localstorage/) - Guide on using Local Storage. 
 
 [ChatGPT](https://chatgpt.com/?openaicom) - Solution for avoiding the same word twice in one round. 
 
