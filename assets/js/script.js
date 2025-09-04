@@ -191,7 +191,7 @@ const typingInput = document.querySelector("#typing-input"); // Variable for fun
 /**
  * Initializes game. 
  * If key (letter) matches uppercase or lowercase letters and are found in the word, matched letter shows in the letterbox.
- * If not, decrement amout of guesses and show the key under wrong letters.
+ * If not, decrement amount of guesses and show the key under wrong letters.
  */
 function initGame(e) { 
   let key = e.target.value.toLowerCase(); 
@@ -274,4 +274,4 @@ function closeModal() {
   }
 
 $(typingInput).on("input", initGame); // Initiates game when you put a letter in the letterbox on mobile/tablet
-document.addEventListener("keydown", () => typingInput.focus()); // Initates game when you press a key on desktop
+document.addEventListener("keydown", () => typingInput.focus()); // Initiates game when you press a key on desktop

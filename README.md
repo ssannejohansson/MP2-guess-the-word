@@ -48,7 +48,7 @@ The goal was to make a colorful yet clean design to make the interface simple, b
 #### Should Have
 - A modal that communicates when the game is over
 - Different difficulty levels
-- Random, shuffeled words 
+- Random, shuffled words 
 - Score count 
 
 #### Could Have
@@ -179,7 +179,7 @@ To fork the repository, log in to your GitHub account, go to the repository of t
 
 **How to Clone**
 
-To clone the repository, log in your GitHub accout, go to the repository of the project you want to clone [this one](https://github.com/ssannejohansson/MP2-guess-the-word.git) for this project, click on the **Code** button and select if you want to clone with HTTPS, SSH or GitHub CLI and copy the code. Open the **terminal** in your code editor and change directory to the location you want to use for the cloned directory and type *git clone* into the terminal and paste the link you copied. Press **enter**. 
+To clone the repository, log in your GitHub account, go to the repository of the project you want to clone [this one](https://github.com/ssannejohansson/MP2-guess-the-word.git) for this project, click on the **Code** button and select if you want to clone with HTTPS, SSH or GitHub CLI and copy the code. Open the **terminal** in your code editor and change directory to the location you want to use for the cloned directory and type *git clone* into the terminal and paste the link you copied. Press **enter**. 
 
 
 ## Testing
@@ -274,7 +274,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 
 | Bug | How I solved it |
 | ----------- | ----------- |
-| The required attribute on name input was bypassed and made it possible to continue without entering a name| Added form action="" and changed button type from button to "submit". | 
+| The required attribute on name input was bypassed and made it possible to continue without entering a name| Added form action="#" and changed button type from button to "submit". | 
 | It didn't work to filter the wordList array to get different difficulty levels based on word length | Instead of filtering, I created separate arrays for each difficulty level and pushed the specific array into the wordList array | 
 | Score count got reset with each new word | Since I had the score variable set to 0 inside of the random word function, it got reset to 0 because the function was called every time a correct word was found | 
 | The letter "W" got cut off in letterbox on mobile | Set padding to 0 to remove the default input padding that cut the letter off | 
