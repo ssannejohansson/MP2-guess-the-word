@@ -236,11 +236,11 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | **Must Have** | Possibility to restart game | **Done** |
 | **Should Have** | A modal with feedback | **Done** |
 | **Should Have** | Different difficulty levels | **Done** |
-| **Should Have** | Random, shuffeled words | **Done** |
+| **Should Have** | Random, shuffled words | **Done** |
 | **Could Have** | A personal greeting | **Done** |
 | **Could Have** | Storage of previous score | **Done** |
 
-### Testing Feautures
+### Testing Features
 | Page | Feature | Expected Outcome | Action | Pass / Fail |
 | ----------- | ----------- | ----------- | ----------- | ----------- | 
 | Start | **Input field** | When clicked, input works | Clicked the field, wrote name | Pass | 
@@ -254,6 +254,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | Game | **Wrong letters** | When wrong letter is written it shows under wrong letters | Wrote wrong letter | Pass |
 | Game | **Guesses lefts** | When wrong letter is written, guesses decreases by one | Wrote wrong letter| Pass |
 | Game | **Score** | When right letter is written, score will increment | Wrote the right word | Pass |
+| Game | **Latest Score** | When starting a new game, the latest score will show | Started a new game | Pass |
 | Game | **Right word** | When right word is written, letters will turn green | Wrote the right word | Pass |
 | Game | **Right word** | When right word is written, a new word and hint will show | Wrote the right word | Pass |
 | Game | **Wrong word** | When wrong word is written and guesses reach 0, letters will turn red and the right word shows | Wrote the wrong word | Pass |
@@ -261,6 +262,7 @@ Orange performance on mobile are explained by the usage of Bootstrap framework a
 | Modal | **Game over** | The right feedback shows in modal | Played the game and checked modal | Pass |
 | Modal | **X button** | When clicked, the modal will close | Clicked the X | Pass |
 | Modal | **Play again button** | When clicked, the score and guesses  will reset. Previous score will update and a new word show | Clicked the button | Pass |
+| Modal | **Latest Score** | When starting clicking play again, the latest score will show | Played the game and then clicked play again | Pass |
 | 404 | **Return to homepage** | When clicked, home page will open | Clicked button | Pass |
 | All | **Hovers** | When hover, all buttons  will have a hover effect to show that they are focused | Hovered the buttons | Pass |
 
