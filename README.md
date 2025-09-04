@@ -7,11 +7,11 @@ Guess the Word is my second Milestone Project created for Code Institute Level 5
 Link to deployed site: [Guess the Word](https://ssannejohansson.github.io/MP2-guess-the-word/)
 
 ## User Experience (UX)
-I chose to create a word guessing game since it's a game that fits everyone, especially since I chose to create three different difficulty levels. 
-
-The goal was to make a colorful yet clean design to make it simple but playful. 
 
 ### Project Goals / Rationale
+I chose to create a word guessing game since it's a game that fits everyone, especially since I chose to create three different difficulty levels. I also implemented a score tracker of the latest score to create even more motivation while playing the game. 
+
+The goal was to make a colorful yet clean design to make the interface simple, but still playful.
 
 #### Key information for the site
 - A word guessing game
